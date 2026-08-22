@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc"><title id="title">Circuit Zandvoort outline</title><desc id="desc">Minimal editorial outline of the 4.259 kilometre Circuit Zandvoort, home of the Dutch Grand Prix, with fourteen corner markers.</desc><path d="M695 560 C718 523 722 482 720 438 C718 394 711 350 699 314 C687 279 676 243 684 208 C692 173 714 142 708 113 C703 83 680 65 650 68 C621 71 602 92 603 119 C604 145 621 163 610 183 C598 204 569 207 545 195 C522 184 505 165 479 156 C448 145 417 151 391 170 C365 189 353 217 337 238 C321 259 298 272 271 270 C242 268 219 249 203 229 C185 207 160 194 137 201 C111 209 98 235 105 259 C112 284 135 300 161 305 C187 310 207 300 225 312 C245 325 245 352 230 369 C212 389 181 396 157 410 C133 425 119 450 126 475 C134 505 163 519 193 516 C225 513 248 493 276 487 C306 480 332 490 357 507 C384 525 410 546 438 562 C468 580 504 584 529 566 C551 550 551 524 533 506 C514 487 485 479 474 457 C462 434 471 410 492 397 C514 383 543 388 569 398 C597 409 620 429 647 434 C671 439 692 427 704 409 C718 388 717 364 706 345" fill="none" stroke="#c9ee6b" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><g fill="#c9ee6b"><circle cx="695" cy="560" r="7"/><circle cx="684" cy="208" r="7"/><circle cx="603" cy="119" r="7"/><circle cx="610" cy="183" r="7"/><circle cx="545" cy="195" r="7"/><circle cx="479" cy="156" r="7"/><circle cx="337" cy="238" r="7"/><circle cx="203" cy="229" r="7"/><circle cx="105" cy="259" r="7"/><circle cx="230" cy="369" r="7"/><circle cx="157" cy="410" r="7"/><circle cx="126" cy="475" r="7"/><circle cx="276" cy="487" r="7"/><circle cx="474" cy="457" r="7"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+<title id="title">Circuit Zandvoort F1 track layout</title>
+<desc id="desc">Minimal editorial circuit map of Zandvoort showing the current fourteen-corner Formula 1 layout, start finish and three sectors.</desc>
+<path d="M92 482 C112 465 145 461 190 463 C235 465 274 467 311 465 C345 463 371 451 389 429 C404 411 405 389 394 371 C383 352 365 343 342 338 C315 332 286 331 263 337 C241 343 226 355 211 365 C196 375 180 378 164 374 C147 370 139 359 141 344 C144 326 158 315 176 312 C201 308 222 315 240 326 C258 337 277 339 295 329 C313 318 324 299 324 279 C324 258 313 241 295 231 C277 221 258 220 241 228 C220 237 204 251 193 269 C181 289 174 314 176 335 C178 356 187 372 199 387 C212 403 224 418 235 434 C246 450 256 467 274 477 C292 488 314 493 337 488 C363 483 382 466 392 445 C402 424 401 401 391 383 C380 364 365 352 349 337 C333 322 322 301 326 277 C331 246 351 218 381 201 C411 184 446 183 474 194 C500 205 520 224 538 242 C555 260 575 267 595 259 C615 251 628 234 627 214 C626 194 614 176 616 154 C618 133 633 117 654 112 C676 107 697 115 710 132 C724 151 724 176 717 199 C709 226 696 252 695 279 C694 307 705 334 720 355 C735 377 750 395 766 409 C781 423 796 439 802 458 C809 480 804 503 789 520 C774 538 752 548 728 549 C703 550 681 541 661 528 C640 514 622 496 601 483 C579 470 555 463 534 467 C512 471 495 484 491 503 C487 523 497 541 516 550 C534 559 557 559 575 551 C596 542 609 524 610 503 C611 484 603 467 588 454 C571 439 550 431 528 432 C504 433 484 444 470 461 C456 478 448 499 452 519 C456 540 470 556 489 565" fill="none" stroke="#c9ee6b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92 482 C112 465 145 461 190 463 C235 465 274 467 311 465" fill="none" stroke="#f4f0e7" stroke-width="2" opacity=".45"/>
+<g fill="#c9ee6b" font-family="Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="1">
+<circle cx="92" cy="482" r="6"/><text x="75" y="510">01</text>
+<circle cx="211" cy="365" r="6"/><text x="190" y="350">02</text>
+<circle cx="274" cy="477" r="6"/><text x="254" y="502">03</text>
+<circle cx="326" cy="277" r="6"/><text x="303" y="263">04</text>
+<circle cx="391" cy="383" r="6"/><text x="397" y="374">05</text>
+<circle cx="193" cy="269" r="6"/><text x="166" y="256">06</text>
+<circle cx="241" cy="228" r="6"/><text x="220" y="214">07</text>
+<circle cx="381" cy="201" r="6"/><text x="385" y="184">08</text>
+<circle cx="474" cy="194" r="6"/><text x="480" y="178">09</text>
+<circle cx="538" cy="242" r="6"/><text x="547" y="263">10</text>
+<circle cx="627" cy="214" r="6"/><text x="641" y="205">11</text>
+<circle cx="616" cy="154" r="6"/><text x="628" y="143">12</text>
+<circle cx="710" cy="132" r="6"/><text x="724" y="127">13</text>
+<circle cx="789" cy="520" r="6"/><text x="802" y="536">14</text>
+</g>
+<g font-family="Arial,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#c9ee6b">
+<text x="176" y="292">S1</text>
+<text x="500" y="300">S2</text>
+<text x="690" y="310">S3</text>
+</g>
+<g stroke="#c9ee6b" stroke-width="2" opacity=".75">
+<line x1="160" y1="300" x2="205" y2="300"/>
+<line x1="482" y1="308" x2="527" y2="308"/>
+<line x1="673" y1="318" x2="718" y2="318"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="9" fill="#f4f0e7" opacity=".65" letter-spacing="1.4">
+<text x="72" y="555">START / FINISH</text>
+<text x="72" y="570">ZANDVOORT · 4.259 KM · 14 CORNERS</text>
+</g>
+</svg>
