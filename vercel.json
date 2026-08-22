@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/newsroom", "destination": "/newsroom.html" },
+    { "source": "/predictions", "destination": "/predictions.html" },
+    { "source": "/race-centre", "destination": "/race-centre.html" },
+    { "source": "/calendar", "destination": "/calendar.html" },
+    { "source": "/guide-2026", "destination": "/guide-2026.html" },
+    { "source": "/editorial", "destination": "/editorial.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
+}
