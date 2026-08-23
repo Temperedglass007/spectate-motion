@@ -1,12 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/race-centre", "destination": "/race-centre-live.html", "permanent": false },
+    { "source": "/race-centre.html", "destination": "/race-centre-live.html", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/newsroom", "destination": "/newsroom.html" },
     { "source": "/predictions", "destination": "/predictions.html" },
-    { "source": "/race-centre", "destination": "/race-centre-live.html" },
-    { "source": "/race-centre.html", "destination": "/race-centre-live.html" },
     { "source": "/race-centre-source", "destination": "/race-centre.html" },
     { "source": "/calendar", "destination": "/calendar.html" },
     { "source": "/guide-2026", "destination": "/guide-2026.html" },
