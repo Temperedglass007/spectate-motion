@@ -1,0 +1,71 @@
+name: Premium newsroom spacing
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tighten-newsroom:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply compact premium newsroom pass
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('motion.css')
+          s = p.read_text(encoding='utf-8-sig')
+          marker = '/* SPECTATE PREMIUM NEWSROOM SPACING */'
+          if marker in s:
+              raise SystemExit(0)
+          css = r'''/* SPECTATE PREMIUM NEWSROOM SPACING */
+          .newsroom-rule{margin:8px 0 10px;padding:6px 0;gap:5px}
+          .news-controls{margin:0 0 8px}
+          .news-feed{gap:0;border-top:2px solid var(--ink)}
+          .news-card{border-top:0!important;border-bottom:1px solid var(--line);padding:0 18px 12px 0}
+          .news-card.featured{padding-right:24px}
+          .news-card:not(.featured){padding-left:18px}
+          .news-card:last-child{border-bottom:0}
+          .news-image{margin-bottom:6px}
+          .status-line{margin-bottom:3px}
+          .news-card h2{margin:2px 0 4px}
+          .news-card p{margin:0 0 5px;line-height:1.4}
+          .editorial-note{margin:8px 0;padding:10px 12px}
+          .source-ledger{margin:20px 0 0}
+          .source-ledger h2{margin:14px 0}
+          .ledger-row{padding:10px 0;gap:14px}
+          .section-head{padding:14px 0 10px}
+          .section-head h2{font-size:36px}
+          .detail-backdrop{padding:10px}
+          .detail-panel{height:min(96vh,940px)}
+          .detail-body{padding:20px 28px 28px}
+          .detail-grid{margin:12px 0 18px;padding:9px 0}
+          .detail-layout{gap:22px}
+          .report-copy p{margin-bottom:14px}
+          .report-copy h3{margin:22px 0 9px}
+          .quote{margin:16px 0;padding:14px 0}
+          .side-block{margin-bottom:18px}
+          .detail-actions{margin-top:18px;padding-top:12px}
+          @media(max-width:760px){
+            .news-feed{display:grid;gap:0}
+            .news-card,.news-card.featured,.news-card:not(.featured){padding:0 0 12px}
+            .news-card:not(.featured){padding-top:12px}
+            .section-head{padding:12px 0 8px}
+            .detail-body{padding:18px 16px 24px}
+          }
+          '''
+          p.write_text(s.rstrip() + '\n' + css, encoding='utf-8')
+          PY
+      - name: Commit compact spacing pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add motion.css
+          git diff --cached --quiet || git commit -m "Tighten newsroom spacing for premium editorial layout"
+          git push
