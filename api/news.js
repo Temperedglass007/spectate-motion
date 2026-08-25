@@ -98,27 +98,84 @@ const CURATED = [
     related: ['/editorial-ferrari']
   },
   {
-    status: 'speculation', source: 'Formula 1 · reported speculation',
-    title: 'Verstappen remains at the centre of the 2027 driver-market rumour mill',
-    description: 'Formula 1 has reported on speculation linking Verstappen with McLaren and the knock-on effect it could have on the 2027 grid. No such move is established here, so SPECTATE keeps it explicitly in the rumour column.',
-    link: 'https://www.formula1.com/en/latest/article/piastri-insists-mclaren-are-very-happy-with-me-amid-reported-verstappen-talks.sOSX3WuQmPeZgibLN9Zl2',
-    published: '2026-07-03T07:31:00Z',
-    kicker: 'Rumour watch · 2027 market',
+    status: 'speculation', source: 'Formula 1 · reported market speculation',
+    title: 'Fernando Alonso’s 2027 future remains one of the biggest open questions',
+    description: 'Alonso has not yet decided whether he will continue with Aston Martin beyond 2026, keeping one of the most important remaining seats in the 2027 market open.',
+    link: 'https://www.formula1.com/en/latest/article/its-not-my-biggest-priority-alonso-in-no-hurry-to-make-call-on-his-aston-martin-future.35uUOTMKs5twJIc1aJ6HJU',
+    published: '2026-08-21T10:57:00Z',
+    kicker: 'Rumour watch · Aston Martin',
     body: [
-      'Formula 1 has reported speculation around Max Verstappen and McLaren and the possible knock-on effect for the 2027 grid.',
-      'That reporting is not confirmation of a transfer. SPECTATE therefore treats the story as speculation and separates the reported possibility from established driver contracts.',
-      'The only responsible conclusion at this stage is that the rumour is part of the wider driver-market conversation, not that a move is happening.'
+      'Fernando Alonso remains one of the major unresolved pieces of the 2027 driver market. Formula 1 reported after Zandvoort that the two-time World Champion is still in no hurry to decide whether he will remain with Aston Martin.',
+      'The confirmed part is that no final decision has been announced. The speculation concerns what Alonso ultimately chooses: another season with Aston Martin, a move elsewhere, or an exit from Formula 1.',
+      'That uncertainty is especially important because the top end of the market has become more settled after Max Verstappen, Lando Norris, Oscar Piastri, George Russell, Kimi Antonelli and the Williams pairing were largely taken out of the immediate silly-season equation.'
     ],
-    keyFacts: ['Speculation only', 'No Verstappen-to-McLaren move confirmed here', 'Potential 2027 grid implications'],
-    context: 'Driver-market rumours can move quickly and are often based on incomplete information, so SPECTATE will update the status if a primary source establishes something new.',
-    whyItMatters: 'If a top driver were to move, the consequences would extend beyond one seat. But until a contract or official statement establishes it, the knock-on effects remain hypothetical.',
-    whatNext: 'Official team statements, driver comments and confirmed contract announcements.',
+    keyFacts: ['No 2027 decision announced', 'Aston Martin seat remains the key question', 'Possible outcomes include staying or leaving F1', 'Speculation only'],
+    context: 'Formula 1 reporting says Alonso is considering the bigger question of whether he wants to continue racing, not simply whether an Aston Martin seat is available.',
+    whyItMatters: 'Alonso’s decision could unlock one of the most consequential remaining seats and trigger movement further down the grid.',
+    whatNext: 'Watch Alonso’s own comments, Aston Martin statements and any credible reporting that establishes a decision.',
+    quotes: [],
+    related: []
+  },
+  {
+    status: 'speculation', source: 'Motorsport.com · reported market speculation',
+    title: 'Rafael Câmara emerges as a live name in the 2027 seat scramble',
+    description: 'Ferrari junior Rafael Câmara has been linked with potential 2027 opportunities at Cadillac and Haas after a strong start to his Formula 2 campaign. Cadillac has since called the reports unsubstantiated, so SPECTATE keeps the story firmly in the rumour column.',
+    link: 'https://www.motorsport.com/f1/news/cadillac-claims-rafael-camara-2027-rumor-is-unsubstantiated-yet-admits-things-can-change/10846052/',
+    published: '2026-08-13T08:43:00Z',
+    kicker: 'Rumour watch · Ferrari academy / 2027',
+    body: [
+      'Rafael Câmara has become one of the junior drivers appearing repeatedly in 2027 F1-market discussion. Motorsport.com reported that Cadillac was tracking the Ferrari junior, with Haas also mentioned as a possible route into Formula 1.',
+      'The important counterweight is Cadillac’s public response: CEO Dan Towriss called the rumour unsubstantiated while leaving the door open to future changes. That means the market story exists, but there is no confirmed seat offer to report.',
+      'Câmara’s Formula 2 results are the part that can be assessed directly. The F1 seat question remains a possibility rather than an established outcome.'
+    ],
+    keyFacts: ['Ferrari junior', 'F2 contender', 'Cadillac interest reported', 'Haas also linked in reporting', 'Cadillac publicly called the rumour unsubstantiated'],
+    context: 'This is exactly the type of driver-market story SPECTATE labels as speculation: there is reporting to discuss, but the team has not confirmed the move.',
+    whyItMatters: 'If a junior driver is elevated, it can change the market for experienced drivers competing for the same vacancies at Cadillac, Haas and elsewhere.',
+    whatNext: 'Câmara’s F2 results, Cadillac/Haas statements and any confirmed contract or test announcements.',
+    quotes: [],
+    related: []
+  },
+  {
+    status: 'speculation', source: 'Formula 1 · reported speculation and team denial',
+    title: 'Nikola Tsolov-to-Racing Bulls chatter was denied — but the rumour shows how fluid the junior market is',
+    description: 'Racing Bulls team principal Alan Permane rejected reports that Nikola Tsolov had been offered a 2027 seat. The rumour is therefore not a confirmed transfer, but it remains useful market context.',
+    link: 'https://www.formula1.com/en/latest/article/we-havent-spoken-about-it-at-all-permane-shuts-down-tsolov-seat-rumours-for-2027.7vh1bqpOCAsf6UAG6qtGRe',
+    published: '2026-06-27T07:37:00Z',
+    kicker: 'Rumour watch · Racing Bulls',
+    body: [
+      'Earlier in the season, reports circulated that Formula 2 driver Nikola Tsolov could be in line for a Racing Bulls seat in 2027.',
+      'Racing Bulls team principal Alan Permane directly pushed back on that claim, saying the team had not even discussed the move internally. That makes a Tsolov seat an unconfirmed rumour rather than a developing deal.',
+      'The story remains relevant because Racing Bulls is one of the teams where junior-driver performance and Red Bull’s wider driver programme can create rapid changes in the line-up.'
+    ],
+    keyFacts: ['Tsolov is a Formula 2 prospect', 'Racing Bulls link was reported', 'Team principal denied internal discussions', 'No seat confirmed'],
+    context: 'A denial is still useful newsroom information: it tells readers the rumour exists and also records the team’s current position.',
+    whyItMatters: 'Racing Bulls has historically been a major pathway for Red Bull juniors, so even denied rumours can signal which drivers are being discussed around the wider programme.',
+    whatNext: 'Follow Tsolov’s F2 campaign and any future Racing Bulls or Red Bull junior-programme announcements.',
+    quotes: [],
+    related: []
+  },
+  {
+    status: 'speculation', source: 'Motorsport.com · reported market speculation',
+    title: 'Could Liam Lawson’s Red Bull return change the 2027 picture?',
+    description: 'Lawson’s unexpected return to Red Bull at Zandvoort produced a P7 finish and revived discussion around his place in the Red Bull driver system. Nothing about a 2027 promotion has been confirmed.',
+    link: 'https://www.formula1.com/en/latest/article/how-super-sub-lawson-rose-to-the-challenge-of-driving-this-years-red-bull.4EkibOrkZOGpCYiVCIE24I',
+    published: '2026-08-24T16:53:00Z',
+    kicker: 'Rumour watch · Red Bull driver programme',
+    body: [
+      'Liam Lawson was unexpectedly recalled to Red Bull for Zandvoort after Isack Hadjar’s injury. He finished seventh, turning a difficult last-minute opportunity into a points-scoring return to the senior team.',
+      'The result does not create a 2027 contract or establish that Lawson will replace anyone. It does, however, give Red Bull another data point when evaluating its pool of drivers around Verstappen and Hadjar.',
+      'Because Red Bull’s senior and sister-team seats are closely connected, Lawson’s performance can influence the wider conversation even if the immediate explanation for his return was Hadjar’s injury.'
+    ],
+    keyFacts: ['Lawson returned to Red Bull as a substitute', 'P7 at Zandvoort', 'Hadjar’s injury triggered the call-up', 'No 2027 promotion confirmed'],
+    context: 'Red Bull has now committed Verstappen through 2030, so the remaining question is how the team manages its other seats and its wider junior pool.',
+    whyItMatters: 'A strong substitute performance can alter internal rankings even without an immediate contract change, especially in a team with multiple drivers under its umbrella.',
+    whatNext: 'Hadjar’s return, Lawson’s remaining opportunities and any Red Bull/Racing Bulls driver announcements.',
     quotes: [],
     related: []
   }
 ];
 
-const clean = (value = '') => value.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
+const clean = (value = '') => value.replace(/<!\\[CDATA\\[|\\]\\]>/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
 
 const imageFromHtml = async (url) => {
   try {
@@ -128,7 +185,7 @@ const imageFromHtml = async (url) => {
     });
     if (!r.ok) return '';
     const html = await r.text();
-    const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+    const m = html.match(/<meta[^>]+property=[\"']og:image[\"'][^>]+content=[\"']([^\"']+)[\"']/i) || html.match(/<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+property=[\"']og:image[\"']/i);
     return m ? m[1] : '';
   } catch { return ''; }
 };
