@@ -2,40 +2,54 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#e9e5db"><meta name="description" content="SPECTATE MOTION newsroom — facts, analysis and speculation clearly separated.">
+<meta name="theme-color" content="#e9e5db"><meta name="description" content="SPECTATE MOTION newsroom — confirmed news, analysis and clearly labelled speculation.">
 <title>Newsroom — SPECTATE MOTION</title>
 <link rel="stylesheet" href="motion.css"><script defer src="site.js"></script>
 <style>
-.newsroom-rule{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 34px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.newsroom-rule{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 30px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .newsroom-rule span{font:800 9px Arial;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border:1px solid var(--line)}
 .newsroom-rule .c{border-color:#4c9b72;color:#28734d}.newsroom-rule .a{border-color:#5d8fb8;color:#3e6d94}.newsroom-rule .s{border-color:#9a6ab5;color:#78408f}
-.status-line{display:flex;align-items:center;gap:8px;font:800 9px Arial;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.dot{width:7px;height:7px;border-radius:50%;display:inline-block}.dot.c{background:#43a56f}.dot.a{background:#5d8fb8}.dot.s{background:#9a6ab5}
-.news-card{border-top:2px solid var(--ink);padding:20px 0 24px}.news-card h2{font:500 clamp(28px,4vw,44px)/.95 var(--serif);letter-spacing:-.05em;margin:7px 0 10px}.news-card p{max-width:760px}.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.news-grid .news-card{border-top:1px solid var(--line)}
+.news-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 22px}.news-controls p{margin:0;font:9px Arial;letter-spacing:.07em;text-transform:uppercase;color:#666960}.news-filter{display:flex;gap:6px;flex-wrap:wrap}.news-filter button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:7px 9px;font:800 8px Arial;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}.news-filter button.active,.news-filter button:hover{background:var(--ink);color:var(--paper)}
+.news-feed{display:grid;grid-template-columns:1.35fr 1fr;gap:26px}.news-card{border-top:2px solid var(--ink);padding:0 0 25px}.news-card.featured{grid-row:span 2}.news-card:not(.featured){border-top:1px solid var(--line)}
+.news-image{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--mist);margin-bottom:15px;filter:saturate(.92)}.news-card.featured .news-image{aspect-ratio:16/8.5}.news-image[hidden]{display:none}
+.status-line{display:flex;align-items:center;gap:8px;font:800 9px Arial;letter-spacing:.1em;text-transform:uppercase;margin:0 0 9px}.dot{width:7px;height:7px;border-radius:50%;display:inline-block}.dot.c{background:#43a56f}.dot.a{background:#5d8fb8}.dot.s{background:#9a6ab5}
+.news-card h2{font:500 clamp(25px,3.2vw,40px)/.96 var(--serif);letter-spacing:-.045em;margin:5px 0 10px}.news-card:not(.featured) h2{font-size:clamp(22px,2.5vw,30px)}.news-card p{max-width:760px;margin:0 0 12px}.meta{display:flex;justify-content:space-between;gap:10px;align-items:center;font:8px Arial;letter-spacing:.06em;text-transform:uppercase;color:#666960}.meta a{color:inherit}.rumour-note{font:800 8px Arial!important;letter-spacing:.08em;text-transform:uppercase;color:#78408f!important}
 .editorial-note{margin:28px 0;padding:18px 20px;background:var(--ink);color:var(--paper)}.editorial-note strong{font:800 9px Arial;letter-spacing:.1em;text-transform:uppercase}.editorial-note p{margin:8px 0 0;max-width:760px;color:inherit;opacity:.82}
-.source{font:9px Arial;letter-spacing:.06em;text-transform:uppercase;color:#666960}.source a{color:inherit}
-@media(max-width:760px){.news-grid{grid-template-columns:1fr}}
+.empty{padding:35px 0;border-top:1px solid var(--line);font:14px Georgia;color:#666960}.error{padding:18px 0;font:12px Georgia;color:#8a3d35}
+@media(max-width:760px){.news-feed{grid-template-columns:1fr}.news-card.featured{grid-row:auto}.news-controls{align-items:flex-start;flex-direction:column}.news-image,.news-card.featured .news-image{aspect-ratio:16/9}}
 </style>
 </head>
 <body><main class="page">
 <div class="topline"><span class="status">Editorial newsroom</span><span>Independent / Est. 2026</span><span>Evidence-led</span></div>
 <header class="masthead"><div class="edition">Editorial desk<br>Issue 001</div><h1>SPECTATE<span>Motion</span></h1><div class="edition">Race intelligence<br>&amp; culture in motion</div></header>
 <nav class="menu"><a href="/">Home</a><a class="current" href="/newsroom">Newsroom</a><a href="/predictions">Predictions</a><a href="/race-centre">Race centre</a><a href="/calendar">Calendar</a><a href="/guide-2026">2026 rules</a></nav>
-<div class="freshness"><strong>Desk standard</strong><span>Facts first · analysis separated · speculation transparent</span><span class="changed">Updated 25 August 2026</span></div>
+<div class="freshness"><strong>Desk standard</strong><span>Facts first · analysis separated · speculation transparent</span><span class="changed">Live newsroom</span></div>
 <div class="eyebrow">The newsroom</div><h1 class="page-title">Read the grid,<br>not the noise.</h1>
-<p class="intro">SPECTATE separates what is established from what we think and what remains uncertain. A reputable report is not automatically treated as fact; the underlying claim must be established before it receives the green label.</p>
+<p class="intro">Confirmed stories lead. SPECTATE analysis is labelled as analysis, and rumours stay visibly marked as speculation. Every story uses a relevant editorial image when the source provides one.</p>
 <div class="newsroom-rule"><span class="c">● Confirmed</span><span class="a">● Analysis</span><span class="s">● Speculation</span></div>
-<section><div class="section-head"><h2>Latest / confirmed</h2><p>Established facts only. Official statements and primary sources take priority.</p></div>
-<article class="news-card"><div class="status-line"><i class="dot c"></i>Confirmed · 20 Aug 2026</div><h2>Max Verstappen re-signs with Red Bull through 2030.</h2><p>Red Bull confirmed the long-term contract extension, keeping Verstappen with the team through the end of the 2030 season.</p><p class="source">Primary source · <a href="https://www.formula1.com/en/latest/article/verstappen-signs-contract-extension-with-red-bull-until-the-end-of-2030.4gUd8JEkYnKmD6bNMS5syw" target="_blank" rel="noreferrer">Formula 1 ↗</a></p></article>
-<div class="news-grid">
-<article class="news-card"><div class="status-line"><i class="dot c"></i>Confirmed · 18 Aug 2026</div><h2>Alex Albon stays with Williams for 2027.</h2><p>Williams confirmed Albon will remain with the team for the 2027 season.</p><p class="source">Primary source · Williams ↗</p></article>
-<article class="news-card"><div class="status-line"><i class="dot c"></i>Confirmed · 18 Aug 2026</div><h2>Carlos Sainz signs a new multi-year Williams deal.</h2><p>Williams confirmed a new multi-year agreement with Sainz.</p><p class="source">Primary source · Williams ↗</p></article>
-</div></section>
-<section><div class="section-head"><h2>Latest / analysis</h2><p>Interpretation by SPECTATE. These are not presented as established facts.</p></div>
-<article class="news-card"><div class="status-line"><i class="dot a"></i>Analysis · SPECTATE desk</div><h2>What the confirmed driver moves mean for the 2027 grid.</h2><p>Verstappen's long-term Red Bull commitment and Williams' confirmed line-up reduce the number of genuinely open seats. The remaining market should therefore be read through confirmed vacancies rather than headline speculation.</p><p class="source">Editorial analysis · SPECTATE Motion</p></article></section>
-<section><div class="section-head"><h2>Speculation / tracker</h2><p>Unconfirmed claims stay here until the underlying fact is established.</p></div>
-<article class="news-card"><div class="status-line"><i class="dot s"></i>Speculation · explicitly unconfirmed</div><h2>Reported personnel changes remain outside the confirmed desk.</h2><p>Stories based on unnamed sources, paddock talk or possible future moves are not promoted to confirmed status simply because a reputable outlet reported them. They remain speculation until an official statement or other primary evidence establishes the underlying fact.</p><p class="source">Policy · No breaking-news language used</p></article></section>
-<div class="editorial-note"><strong>Our newsroom rule</strong><p><b>Facts automatically. Analysis deliberately. Speculation transparently.</b> The green label means the underlying fact is established — not merely that somebody reputable reported it.</p></div>
+<div class="news-controls"><p id="updated">Updating the desk…</p><div class="news-filter" role="tablist"><button class="active" data-filter="all">All</button><button data-filter="confirmed">Confirmed</button><button data-filter="analysis">Analysis</button><button data-filter="speculation">Rumours</button></div></div>
+<section><div class="section-head"><h2>Latest from the desk</h2><p>Current F1 developments — not just contract announcements.</p></div><div id="news-feed" class="news-feed" aria-live="polite"><div class="empty">Loading the latest newsroom…</div></div></section>
+<div class="editorial-note"><strong>Our newsroom rule</strong><p><b>Facts automatically. Analysis deliberately. Speculation transparently.</b> A reputable report is not automatically called confirmed; the underlying fact must be established.</p></div>
 <section class="source-ledger"><h2>Source standard</h2><div class="ledger-row"><strong>CONFIRMED</strong><span>Established by an official source, FIA document, team / driver statement or equivalent primary evidence.</span><span>Green</span></div><div class="ledger-row"><strong>ANALYSIS</strong><span>SPECTATE interpretation, context or prediction. Assumptions are made clear.</span><span>Blue</span></div><div class="ledger-row"><strong>SPECULATION</strong><span>Unconfirmed possibility or rumour. Never written as established fact.</span><span>Purple</span></div></section>
 <footer><div class="footmark">Spectate Motion</div><div>An independent SPECTATE project<br>Formula 1 · Motorsport · Culture</div><div><a href="/editorial">Editorial</a><br>© 2026</div></footer>
-</main></body></html>
+</main>
+<script>
+(function(){
+const feed=document.getElementById('news-feed'),updated=document.getElementById('updated'),buttons=[...document.querySelectorAll('.news-filter button')];let stories=[];
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=d=>{try{return new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(d))}catch{return ''}};
+const label=s=>s==='speculation'?'Speculation':s==='analysis'?'Analysis':'Confirmed';
+const render=(filter='all')=>{
+ const list=stories.filter(s=>filter==='all'||s.status===filter);
+ if(!list.length){feed.innerHTML='<div class="empty">No stories in this desk yet.</div>';return}
+ feed.innerHTML=list.map((s,i)=>{
+   const type=s.status||'confirmed', cls=type==='speculation'?'s':type==='analysis'?'a':'c';
+   const img=s.image?`<img class="news-image" src="${esc(s.image)}" alt="Relevant image for ${esc(s.title)}" loading="${i<2?'eager':'lazy'}" onerror="this.hidden=true">`:'';
+   return `<article class="news-card ${i===0?'featured':''}" data-status="${type}">${img}<div class="status-line"><i class="dot ${cls}"></i>${label(type)} · ${esc(fmt(s.published))}</div><h2>${esc(s.title)}</h2><p>${esc(s.description)}</p>${type==='speculation'?'<p class="rumour-note">Unconfirmed — rumour / possibility only</p>':''}<div class="meta"><span>${esc(s.source||'Source')}</span><a href="${esc(s.link)}" target="_blank" rel="noreferrer">Read source ↗</a></div></article>`;
+ }).join('');
+};
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)}));
+fetch('/api/news',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('News feed unavailable');return r.json()}).then(data=>{stories=(data.stories||[]).filter(s=>s.title&&s.link);updated.textContent='Updated '+new Date(data.updatedAt).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});render()}).catch(()=>{feed.innerHTML='<div class="error">The live newsroom feed is temporarily unavailable. Please refresh shortly.</div>';updated.textContent='Feed unavailable'});
+})();
+</script>
+</body></html>
