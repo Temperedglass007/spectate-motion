@@ -1,4 +1,5 @@
 // SPECTATE EDITORIAL POLISH 2026-08-30
+// SPECTATE IMAGE COMPLETE 2026-08-30
 const CURATED = [
   {
     status: 'confirmed', source: 'Formula 1',
