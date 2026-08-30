@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/newsroom", "destination": "/newsroom-v2.html" },
+    { "source": "/newsroom", "destination": "/newsroom-v3.html" },
     { "source": "/race-centre", "destination": "/api/page?name=race-centre" },
     { "source": "/predictions", "destination": "/predictions.html" },
     { "source": "/calendar", "destination": "/calendar.html" },
