@@ -1,0 +1,61 @@
+name: Editorial polish pass
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch editorial images and homepage visual desk
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          marker = 'SPECTATE EDITORIAL POLISH 2026-08-30'
+
+          # 1) Ensure every current newsroom story has a relevant image.
+          p = Path('api/news.js')
+          s = p.read_text(encoding='utf-8-sig')
+          if marker not in s:
+              s = s.replace("image: ''", "image: 'https://commons.wikimedia.org/wiki/Special:FilePath/FIA%20F3%20Austria%202025%20Nr.%205%20C%C3%A2mara.jpg'", 1)
+              s = s.replace("https://www.formula1.com/etc/designs/fom-website/social/f1-default-share.jpg", "https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20Monza%20%2820837856753%29.jpg", 1)
+              s = s.replace("const CURATED = [", "// SPECTATE EDITORIAL POLISH 2026-08-30\nconst CURATED = [", 1)
+              p.write_text(s, encoding='utf-8')
+
+          # 2) Give the homepage one compact visual newsroom strip.
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8-sig')
+          if marker not in s:
+              css = '''<style>/* SPECTATE EDITORIAL POLISH 2026-08-30 */
+          .visual-desk{margin:22px 0 28px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+          .visual-desk-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0}
+          .visual-desk-card{display:block;color:inherit;text-decoration:none;padding:0 18px 16px 0;margin-right:18px;border-right:1px solid var(--line)}
+          .visual-desk-card:last-child{border-right:0;margin-right:0}
+          .visual-desk-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:9px;filter:saturate(.9)}
+          .visual-desk-card .eyebrow{margin:0 0 5px}.visual-desk-card h3{margin:0;font:500 28px/.94 Georgia;letter-spacing:-.045em}.visual-desk-card p{margin:6px 0 0;font:12px/1.42 Georgia;color:#4c5048}
+          @media(max-width:780px){.visual-desk-grid{grid-template-columns:1fr}.visual-desk-card{border-right:0;border-bottom:1px solid var(--line);margin:0;padding:0 0 15px;margin-bottom:15px}.visual-desk-card:last-child{border-bottom:0;margin-bottom:0}}
+          </style>'''
+              html = '''<section class="visual-desk"><div class="section-head"><h2>The visual desk</h2><p>Three stories worth opening — with the image matched to the subject.</p></div><div class="visual-desk-grid">
+          <a class="visual-desk-card" href="/newsroom"><img src="https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_2048/q_auto/v1740000001/fom-website/2026/Netherlands/GettyImages-2291698916.webp" alt="Lando Norris at the Dutch Grand Prix"><div class="eyebrow">Confirmed / Dutch GP</div><h3>Norris takes the final Dutch Grand Prix.</h3><p>Race result, championship context and what Monza changes.</p></a>
+          <a class="visual-desk-card" href="/newsroom"><img src="https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000001/fom-website/2026/Netherlands/Leclerc%20Zandvoort.webp" alt="Charles Leclerc at Zandvoort"><div class="eyebrow">Confirmed / Ferrari</div><h3>Leclerc says Ferrari had the pace for more.</h3><p>The Ferrari story heading home to Monza.</p></a>
+          <a class="visual-desk-card" href="/newsroom"><img src="https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000001/trackside-images/2026/F1_Grand_Prix_of_Netherlands___Previews/2291283639.webp" alt="Kimi Antonelli at the Dutch Grand Prix"><div class="eyebrow">Confirmed / Mercedes</div><h3>Antonelli heads to Monza with a penalty.</h3><p>Why the championship leader's weekend starts differently.</p></a>
+          </div></section>'''
+              s = s.replace('<section class="news-picks">', css + html + '<section class="news-picks">', 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit polish pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add api/news.js index.html
+          git diff --cached --quiet || git commit -m "Polish newsroom imagery and homepage visual desk"
+          git push
