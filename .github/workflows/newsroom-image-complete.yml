@@ -28,12 +28,11 @@ jobs:
               s=re.sub(r"(title:\s*'Rafael Câmara[^']*'.*?image:\s*)''", r"\1'https://commons.wikimedia.org/wiki/Special:FilePath/FIA%20F3%20Austria%202025%20Nr.%205%20C%C3%A2mara.jpg'", s, count=1, flags=re.S)
               s=s.replace("https://www.formula1.com/etc/designs/fom-website/social/f1-default-share.jpg", "https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20Monza.png", 1)
 
-          # The live newsroom currently gets story images from source-page
-          # og:image metadata. Some sources reject cross-site image embedding,
-          # so give the Vettel story a stable Wikimedia fallback when metadata
-          # is missing or unusable.
+          # The live newsroom gets image URLs from source-page og:image metadata.
+          # Force a known-stable, licensed Vettel-at-Monza visual for this story
+          # so a source CDN/hotlink policy cannot leave a broken image.
           old="image: await imageFromHtml(story.link)"
-          new="image: (await imageFromHtml(story.link)) || (story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : '')"
+          new="image: story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : await imageFromHtml(story.link)"
           s=s.replace(old,new,1)
           p.write_text(s,encoding='utf-8')
 
