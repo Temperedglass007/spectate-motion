@@ -218,7 +218,7 @@ export default async function handler(req, res) {
   try {
     const stories = await Promise.all(CURATED.map(async story => ({
       ...story,
-      image: await imageFromHtml(story.link)
+      image: (await imageFromHtml(story.link)) || (story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : '')
     })));
 
     stories.sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
