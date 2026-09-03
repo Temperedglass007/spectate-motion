@@ -27,10 +27,17 @@ jobs:
               s=s.replace("const CURATED = [", "// SPECTATE IMAGE COMPLETE 2026-08-30\nconst CURATED = [", 1)
               s=re.sub(r"(title:\s*'Rafael Câmara[^']*'.*?image:\s*)''", r"\1'https://commons.wikimedia.org/wiki/Special:FilePath/FIA%20F3%20Austria%202025%20Nr.%205%20C%C3%A2mara.jpg'", s, count=1, flags=re.S)
               s=s.replace("https://www.formula1.com/etc/designs/fom-website/social/f1-default-share.jpg", "https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20Monza.png", 1)
+
+          # The live newsroom consumes s.image directly. Use a stable Wikimedia
+          # upload URL for the Vettel story instead of the F1 media hotlink,
+          # which can return a broken image when embedded cross-site.
+          s=re.sub(
+              r"(title:\s*'Sebastian Vettel[^']*'.*?image:\s*)'[^']*'",
+              r"\1'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg'",
+              s, count=1, flags=re.S)
           p.write_text(s,encoding='utf-8')
 
-          # Use a stable upload.wikimedia.org thumbnail for Vettel instead of
-          # Special:FilePath, which can fail when hotlinked from the newsroom.
+          # Keep the legacy visual newsroom fallback equally robust.
           n=Path('newsroom-v3.html')
           h=n.read_text(encoding='utf-8-sig')
           old='https://commons.wikimedia.org/wiki/Special:FilePath/Vettel%20Ferrari%20Monza%202017.jpg'
