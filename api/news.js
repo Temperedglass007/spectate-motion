@@ -214,11 +214,18 @@ const imageFromHtml = async (url) => {
   } catch { return ''; }
 };
 
+const MANUAL_IMAGES = {
+  'Rafael Câmara emerges as a live name in the 2027 seat scramble': 'https://res.cloudinary.com/prod-f2f3/image/upload/v1771928650/f2/global/articles/2026/02_February/GettyImages-2262493663.jpg',
+  'What Zandvoort tells us about the fight heading into Monza': 'https://commons.wikimedia.org/wiki/Special:FilePath/Monza%20aerial%20photo.jpg?width=1600'
+};
+
 export default async function handler(req, res) {
   try {
     const stories = await Promise.all(CURATED.map(async story => ({
       ...story,
-      image: story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : await imageFromHtml(story.link)
+      image: story.title.startsWith('Sebastian Vettel')
+        ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg'
+        : MANUAL_IMAGES[story.title] || await imageFromHtml(story.link)
     })));
 
     stories.sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
