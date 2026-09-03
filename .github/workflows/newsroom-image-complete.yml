@@ -29,11 +29,11 @@ jobs:
               s=s.replace("https://www.formula1.com/etc/designs/fom-website/social/f1-default-share.jpg", "https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20Monza.png", 1)
 
           # The live newsroom gets image URLs from source-page og:image metadata.
-          # Force a known-stable, licensed Vettel-at-Monza visual for this story
-          # so a source CDN/hotlink policy cannot leave a broken image.
-          old="image: await imageFromHtml(story.link)"
-          new="image: story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : await imageFromHtml(story.link)"
-          s=s.replace(old,new,1)
+          # Force the Vettel story to a stable Wikimedia upload URL so source
+          # CDN/hotlink restrictions cannot produce a broken newsroom image.
+          replacement="image: story.title.startsWith('Sebastian Vettel') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg' : await imageFromHtml(story.link)"
+          s=re.sub(r"image:\s*\(await imageFromHtml\(story\.link\)\)\s*\|\|\s*\(story\.title\.startsWith\('Sebastian Vettel'\).*?\)", replacement, s, count=1)
+          s=s.replace("image: await imageFromHtml(story.link)", replacement, 1)
           p.write_text(s,encoding='utf-8')
 
           # Keep the legacy visual newsroom fallback equally robust.
