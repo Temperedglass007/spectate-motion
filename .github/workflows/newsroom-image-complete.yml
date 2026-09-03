@@ -27,12 +27,21 @@ jobs:
               s=s.replace("const CURATED = [", "// SPECTATE IMAGE COMPLETE 2026-08-30\nconst CURATED = [", 1)
               s=re.sub(r"(title:\s*'Rafael Câmara[^']*'.*?image:\s*)''", r"\1'https://commons.wikimedia.org/wiki/Special:FilePath/FIA%20F3%20Austria%202025%20Nr.%205%20C%C3%A2mara.jpg'", s, count=1, flags=re.S)
               s=s.replace("https://www.formula1.com/etc/designs/fom-website/social/f1-default-share.jpg", "https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20Monza.png", 1)
-              p.write_text(s,encoding='utf-8')
+          p.write_text(s,encoding='utf-8')
+
+          # Use a stable upload.wikimedia.org thumbnail for Vettel instead of
+          # Special:FilePath, which can fail when hotlinked from the newsroom.
+          n=Path('newsroom-v3.html')
+          h=n.read_text(encoding='utf-8-sig')
+          old='https://commons.wikimedia.org/wiki/Special:FilePath/Vettel%20Ferrari%20Monza%202017.jpg'
+          new='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg'
+          h=h.replace(old,new)
+          n.write_text(h,encoding='utf-8')
           PY
       - name: Commit image completion
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add api/news.js
-          git diff --cached --quiet || git commit -m "Complete newsroom story image mappings"
+          git add api/news.js newsroom-v3.html
+          git diff --cached --quiet || git commit -m "Fix newsroom image delivery and Vettel visual"
           git push
