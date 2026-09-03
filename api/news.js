@@ -1,6 +1,26 @@
-// SPECTATE EDITORIAL POLISH 2026-08-30
-// SPECTATE IMAGE COMPLETE 2026-08-30
+// SPECTATE EDITORIAL POLISH 2026-09-03
+// SPECTATE MONZA VETTEL F2002 STORY 2026-09-03
 const CURATED = [
+  {
+    status: 'confirmed', source: 'Formula 1 · Ferrari',
+    title: 'Sebastian Vettel to drive Michael Schumacher’s Ferrari F2002 at Monza',
+    description: 'Sebastian Vettel will drive Michael Schumacher’s legendary Ferrari F2002 for a special honour lap before the 2026 Italian Grand Prix, as Ferrari marks 30 years since Schumacher joined the Scuderia.',
+    link: 'https://www.formula1.com/en/latest/article/its-race-week-5-storylines-were-excited-about-ahead-of-the-2026-italian-grand-prix.4qYVYBYKFmNR4iogKqZayk',
+    published: '2026-09-03T08:00:00Z',
+    kicker: 'Italian Grand Prix · Schumacher tribute',
+    body: [
+      'Sebastian Vettel will return to the cockpit at Monza this weekend to drive Michael Schumacher’s Ferrari F2002 in a special tribute before the Italian Grand Prix.',
+      'The F2002 is one of the defining cars of Schumacher’s Ferrari era. It helped him secure his fifth World Championship in 2002 with six races still remaining, and it remains one of the most dominant Ferraris in Formula 1 history.',
+      'Vettel will drive the car for a special honour lap before Sunday’s Grand Prix. Rubens Barrichello, Schumacher’s former Ferrari team-mate, will also drive the F2002 during the weekend, with the Brazilian scheduled to take the car around Monza on Saturday.',
+      'Ferrari is marking 30 years since Schumacher joined the team in 1996. The wider tribute includes the 1996 F310 and Schumacher’s final Ferrari, the 2006 248 F1, alongside the F2002, as well as a special Schumacher-inspired SF-26 livery for Charles Leclerc and Lewis Hamilton.'
+    ],
+    keyFacts: ['Vettel will drive the Ferrari F2002', 'Special honour lap before Sunday’s Italian Grand Prix', 'Barrichello will also drive the F2002 during the weekend', 'Tribute marks 30 years since Schumacher joined Ferrari', 'F310, F2002 and 248 F1 are part of the Monza tribute'],
+    context: 'Ferrari’s 2026 Monza tribute looks back at Schumacher’s 1996-2006 Ferrari era, with the F2002 representing one of the most successful chapters of that partnership.',
+    whyItMatters: 'Vettel’s connection to Schumacher makes the moment particularly significant: Schumacher was an early idol for Vettel, and Vettel later became a Ferrari driver himself. The F2002 also represents the peak of Schumacher’s Ferrari dominance.',
+    whatNext: 'Watch the F2002 honour laps across the Monza weekend, with Vettel scheduled for the Sunday pre-race tribute and Barrichello driving on Saturday.',
+    quotes: [],
+    related: ['/editorial-ferrari', '/race-centre']
+  },
   {
     status: 'confirmed', source: 'Formula 1',
     title: 'Lando Norris wins the final Dutch Grand Prix as Antonelli takes P2',
