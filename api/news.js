@@ -1,5 +1,6 @@
 // SPECTATE EDITORIAL POLISH 2026-09-03
 // SPECTATE MONZA VETTEL F2002 STORY 2026-09-03
+// SPECTATE EDITORIAL POLISH 2026-08-30
 const CURATED = [
   {
     status: 'confirmed', source: 'Formula 1 · Ferrari',
