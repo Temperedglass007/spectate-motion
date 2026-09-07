@@ -4,6 +4,51 @@
 // SPECTATE IMAGE COMPLETE 2026-08-30
 const CURATED = [
   {
+    status: 'confirmed', source: 'Formula 1 · FIA',
+    title: 'Kimi Antonelli wins Italian Grand Prix from P19',
+    description: 'Antonelli charged from 19th to win at Monza, beating George Russell and Max Verstappen in a historic home victory.',
+    link: 'https://www.formula1.com/en/latest/article/antonelli-beats-russell-to-italian-grand-prix-win-with-stunning-comeback-drive.15WtFEBT5JEe4drdeO88t2',
+    published: '2026-09-06T15:11:00Z',
+    kicker: 'Italian Grand Prix · Race report',
+    body: ['Kimi Antonelli won the 2026 Italian Grand Prix after starting 19th because of an engine penalty.','A mid-race Virtual Safety Car allowed Mercedes to put Antonelli onto fresher medium tyres while George Russell stayed out on used hards. Antonelli used the tyre advantage to attack late and take the lead.','The victory extended Antonelli’s championship lead to 66 points after 13 rounds.'],
+    keyFacts: ['Antonelli P1 from P19','Russell P2','Verstappen P3','Seventh win of 2026','66-point championship lead'],
+    context: 'Official Formula 1 race reporting and classification.',
+    whyItMatters: 'This was both a home victory and a championship-defining result.',
+    whatNext: 'The championship moves to Madrid for Round 14.',
+    quotes: [],
+    related: ['/race-centre','/predictions']
+  },
+  {
+    status: 'confirmed', source: 'Formula 1 · FIA',
+    title: 'Mercedes scores Monza 1-2 as Antonelli extends championship lead',
+    description: 'Mercedes took both top steps at Monza, with Antonelli first and Russell second.',
+    link: 'https://www.formula1.com/en/results/2026/races/1293/italy/race-result',
+    published: '2026-09-06T15:30:00Z',
+    kicker: 'Championship · Mercedes',
+    body: ['Mercedes scored 43 points at Monza through Antonelli and Russell.','Antonelli now leads Russell 267-201 in the drivers’ championship. Mercedes leads Ferrari 468-346 in the constructors’ standings.'],
+    keyFacts: ['Mercedes 1-2','Antonelli 267 points','Russell 201 points','Mercedes 468 constructors points'],
+    context: 'Standings after Round 13.',
+    whyItMatters: 'The title fight now has a 66-point gap at its centre.',
+    whatNext: 'Madrid is next.',
+    quotes: [],
+    related: ['/calendar','/predictions']
+  },
+  {
+    status: 'confirmed', source: 'Formula 1 · FIA',
+    title: 'Ferrari suffers Monza heartbreak as Leclerc retires and Hamilton finishes sixth',
+    description: 'Charles Leclerc crashed out early after starting near the front, while Lewis Hamilton recovered to sixth.',
+    link: 'https://www.formula1.com/en/latest/article/antonelli-beats-russell-to-italian-grand-prix-win-with-stunning-comeback-drive.15WtFEBT5JEe4drdeO88t2',
+    published: '2026-09-06T15:40:00Z',
+    kicker: 'Ferrari · Monza',
+    body: ['Leclerc retired after an early crash that triggered the red flag.','Hamilton dropped back after the opening-lap fight but recovered to sixth by the chequered flag.'],
+    keyFacts: ['Leclerc DNF','Hamilton P6','Ferrari leaves Monza without a podium'],
+    context: 'Ferrari’s home race ended without a podium despite strong qualifying positions.',
+    whyItMatters: 'Ferrari now needs to reset quickly before its next home-adjacent European challenge in Madrid.',
+    whatNext: 'Watch Ferrari’s response at the new Madring.',
+    quotes: [],
+    related: ['/editorial-ferrari']
+  },
+  {
     status: 'confirmed', source: 'Formula 1 · Ferrari',
     title: 'Sebastian Vettel to drive Michael Schumacher’s Ferrari F2002 at Monza',
     description: 'Sebastian Vettel will drive Michael Schumacher’s legendary Ferrari F2002 for a special honour lap before the 2026 Italian Grand Prix, as Ferrari marks 30 years since Schumacher joined the Scuderia.',
