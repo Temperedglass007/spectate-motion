@@ -1,288 +1,139 @@
-// SPECTATE EDITORIAL POLISH 2026-09-03
-// SPECTATE MONZA VETTEL F2002 STORY 2026-09-03
-// SPECTATE EDITORIAL POLISH 2026-08-30
-// SPECTATE IMAGE COMPLETE 2026-08-30
-const CURATED = [
+const STORIES = [
   {
-    status: 'confirmed', source: 'Formula 1 · FIA',
-    title: 'Kimi Antonelli wins Italian Grand Prix from P19',
-    description: 'Antonelli charged from 19th to win at Monza, beating George Russell and Max Verstappen in a historic home victory.',
-    link: 'https://www.formula1.com/en/latest/article/antonelli-beats-russell-to-italian-grand-prix-win-with-stunning-comeback-drive.15WtFEBT5JEe4drdeO88t2',
-    published: '2026-09-06T15:11:00Z',
-    kicker: 'Italian Grand Prix · Race report',
-    body: ['Kimi Antonelli won the 2026 Italian Grand Prix after starting 19th because of an engine penalty.','A mid-race Virtual Safety Car allowed Mercedes to put Antonelli onto fresher medium tyres while George Russell stayed out on used hards. Antonelli used the tyre advantage to attack late and take the lead.','The victory extended Antonelli’s championship lead to 66 points after 13 rounds.'],
-    keyFacts: ['Antonelli P1 from P19','Russell P2','Verstappen P3','Seventh win of 2026','66-point championship lead'],
-    context: 'Official Formula 1 race reporting and classification.',
-    whyItMatters: 'This was both a home victory and a championship-defining result.',
-    whatNext: 'The championship moves to Madrid for Round 14.',
-    quotes: [],
-    related: ['/race-centre','/predictions']
-  },
-  {
-    status: 'confirmed', source: 'Formula 1 · FIA',
-    title: 'Mercedes scores Monza 1-2 as Antonelli extends championship lead',
-    description: 'Mercedes took both top steps at Monza, with Antonelli first and Russell second.',
-    link: 'https://www.formula1.com/en/results/2026/races/1293/italy/race-result',
-    published: '2026-09-06T15:30:00Z',
-    kicker: 'Championship · Mercedes',
-    body: ['Mercedes scored 43 points at Monza through Antonelli and Russell.','Antonelli now leads Russell 267-201 in the drivers’ championship. Mercedes leads Ferrari 468-346 in the constructors’ standings.'],
-    keyFacts: ['Mercedes 1-2','Antonelli 267 points','Russell 201 points','Mercedes 468 constructors points'],
-    context: 'Standings after Round 13.',
-    whyItMatters: 'The title fight now has a 66-point gap at its centre.',
-    whatNext: 'Madrid is next.',
-    quotes: [],
-    related: ['/calendar','/predictions']
-  },
-  {
-    status: 'confirmed', source: 'Formula 1 · FIA',
-    title: 'Ferrari suffers Monza heartbreak as Leclerc retires and Hamilton finishes sixth',
-    description: 'Charles Leclerc crashed out early after starting near the front, while Lewis Hamilton recovered to sixth.',
-    link: 'https://www.formula1.com/en/latest/article/antonelli-beats-russell-to-italian-grand-prix-win-with-stunning-comeback-drive.15WtFEBT5JEe4drdeO88t2',
-    published: '2026-09-06T15:40:00Z',
-    kicker: 'Ferrari · Monza',
-    body: ['Leclerc retired after an early crash that triggered the red flag.','Hamilton dropped back after the opening-lap fight but recovered to sixth by the chequered flag.'],
-    keyFacts: ['Leclerc DNF','Hamilton P6','Ferrari leaves Monza without a podium'],
-    context: 'Ferrari’s home race ended without a podium despite strong qualifying positions.',
-    whyItMatters: 'Ferrari now needs to reset quickly before its next home-adjacent European challenge in Madrid.',
-    whatNext: 'Watch Ferrari’s response at the new Madring.',
-    quotes: [],
-    related: ['/editorial-ferrari']
-  },
-  {
-    status: 'confirmed', source: 'Formula 1 · Ferrari',
-    title: 'Sebastian Vettel to drive Michael Schumacher’s Ferrari F2002 at Monza',
-    description: 'Sebastian Vettel will drive Michael Schumacher’s legendary Ferrari F2002 for a special honour lap before the 2026 Italian Grand Prix, as Ferrari marks 30 years since Schumacher joined the Scuderia.',
-    link: 'https://www.formula1.com/en/latest/article/its-race-week-5-storylines-were-excited-about-ahead-of-the-2026-italian-grand-prix.4qYVYBYKFmNR4iogKqZayk',
-    published: '2026-09-03T08:00:00Z',
-    kicker: 'Italian Grand Prix · Schumacher tribute',
-    body: [
-      'Sebastian Vettel will return to the cockpit at Monza this weekend to drive Michael Schumacher’s Ferrari F2002 in a special tribute before the Italian Grand Prix.',
-      'The F2002 is one of the defining cars of Schumacher’s Ferrari era. It helped him secure his fifth World Championship in 2002 with six races still remaining, and it remains one of the most dominant Ferraris in Formula 1 history.',
-      'Vettel will drive the car for a special honour lap before Sunday’s Grand Prix. Rubens Barrichello, Schumacher’s former Ferrari team-mate, will also drive the F2002 during the weekend, with the Brazilian scheduled to take the car around Monza on Saturday.',
-      'Ferrari is marking 30 years since Schumacher joined the team in 1996. The wider tribute includes the 1996 F310 and Schumacher’s final Ferrari, the 2006 248 F1, alongside the F2002, as well as a special Schumacher-inspired SF-26 livery for Charles Leclerc and Lewis Hamilton.'
+    status:'confirmed', source:'Formula 1', kicker:'Spanish GP · Championship',
+    title:'Antonelli leaves Madrid with an 81-point championship lead',
+    description:'Kimi Antonelli won the inaugural Spanish Grand Prix at Madring for his eighth victory of 2026, extending his lead over Mercedes team-mate George Russell to 81 points.',
+    published:'2026-09-13T15:00:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Japan%20GP%20-%20Mercedes%20-%20Kimi%20Antonelli%20-%20FP2.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · Liauzh · CC BY-SA 4.0',
+    link:'https://www.formula1.com/en/latest/article/antonelli-clinches-victory-over-verstappen-and-norris-in-spanish-gp.644ZZfPzRPEaUh2JBHcB9',
+    body:[
+      'Kimi Antonelli won the inaugural Spanish Grand Prix at Madring, adding his eighth Grand Prix victory of the 2026 season.',
+      'Lando Norris led from pole in the opening phase, but a Virtual Safety Car created a strategic split. A slow McLaren pit stop after the VSC had ended further changed the order.',
+      'Max Verstappen finished second, Norris third, Charles Leclerc fourth and George Russell fifth. Lewis Hamilton retired with a brake problem.',
+      'The result moved Antonelli 81 points clear of Russell in the Drivers’ Championship after 14 rounds.'
     ],
-    keyFacts: ['Vettel will drive the Ferrari F2002', 'Special honour lap before Sunday’s Italian Grand Prix', 'Barrichello will also drive the F2002 during the weekend', 'Tribute marks 30 years since Schumacher joined Ferrari', 'F310, F2002 and 248 F1 are part of the Monza tribute'],
-    context: 'Ferrari’s 2026 Monza tribute looks back at Schumacher’s 1996-2006 Ferrari era, with the F2002 representing one of the most successful chapters of that partnership.',
-    whyItMatters: 'Vettel’s connection to Schumacher makes the moment particularly significant: Schumacher was an early idol for Vettel, and Vettel later became a Ferrari driver himself. The F2002 also represents the peak of Schumacher’s Ferrari dominance.',
-    whatNext: 'Watch the F2002 honour laps across the Monza weekend, with Vettel scheduled for the Sunday pre-race tribute and Barrichello driving on Saturday.',
-    quotes: [],
-    related: ['/editorial-ferrari', '/race-centre']
+    keyFacts:['Antonelli P1','8th win of 2026','Verstappen P2','Norris P3','Russell P5','Antonelli +81'],
+    context:'Official Formula 1 and FIA race reporting.',
+    whyItMatters:'The championship leader now carries a substantial points advantage into the final stretch of the season.',
+    whatNext:'Round 15 is Azerbaijan in Baku on September 26.'
   },
   {
-    status: 'confirmed', source: 'Formula 1',
-    title: 'Lando Norris wins the final Dutch Grand Prix as Antonelli takes P2',
-    description: 'Norris won at Zandvoort ahead of Kimi Antonelli and George Russell, with the result confirmed by Formula 1 race classification.',
-    link: 'https://www.formula1.com/en/latest/article/norris-wins-dramatic-dutch-grand-prix-from-antonelli-and-russell-as-verstappen-crashes-out.Zn7iYevVGp5eHzFkTEAz7',
-    published: '2026-08-23T15:27:00Z',
-    kicker: 'Dutch Grand Prix · Race report',
-    body: [
-      'Lando Norris converted his Zandvoort weekend into another Grand Prix victory, beating Kimi Antonelli and George Russell at the final Dutch Grand Prix.',
-      'The race turned on the battle at the front, the changing tyre picture and the late Virtual Safety Car. Norris was able to recover the lead after Antonelli initially moved ahead and then built a decisive gap to the Mercedes driver.',
-      'The result strengthens Norris\' championship momentum while Mercedes still leaves the Netherlands with a double podium. Ferrari also showed strong race pace but finished fourth and fifth after starting lower than its Sunday pace suggested.'
+    status:'confirmed', source:'Formula 1', kicker:'Mercedes · Championship',
+    title:'Russell admits he is realistically out of the title fight',
+    description:'George Russell said he is realistically no longer in the Drivers’ Championship fight after finishing fifth in Madrid and falling 81 points behind Antonelli.',
+    published:'2026-09-13T17:06:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/George%20Russel%20Mercedes%20F1%20%2855383745976%29.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · CC BY-SA 4.0',
+    link:'https://www.formula1.com/en/latest/article/im-not-in-the-fight-for-the-drivers-title-george-russell-concedes-doubts-over-title-challenge-after-antonellis-madrid-win.7KEnyGkZGdpac7a5RD8sx9',
+    body:[
+      'Russell finished fifth at Madring while team-mate Antonelli took his eighth win of the season.',
+      'The result left Russell 81 points behind Antonelli. Russell said he is realistically not in the title fight, while Toto Wolff has since spoken about Mercedes unlocking more of Russell’s potential.',
+      'Mercedes remains focused on the Constructors’ Championship as the team heads to Baku.'
     ],
-    keyFacts: ['Norris P1', 'Antonelli P2', 'Russell P3', 'Final Dutch Grand Prix at Zandvoort'],
-    context: 'Zandvoort was the final standalone race before the championship moves into the next phase of the calendar, with Monza next on the schedule.',
-    whyItMatters: 'Norris has added another major result to the championship fight, while Mercedes retains a strong points haul and Ferrari has evidence that its race pace is closer to the front than qualifying suggested.',
-    whatNext: 'The Italian Grand Prix at Monza becomes the next major test, with Antonelli also carrying a confirmed grid-penalty issue into the weekend.',
-    quotes: [],
-    related: ['/editorial-ferrari']
+    keyFacts:['Russell P5 in Spain','81-point deficit','Antonelli 8 wins','Mercedes leads constructors'],
+    context:'Russell’s comments are his own assessment of the championship situation, not a mathematical elimination.',
+    whyItMatters:'The Mercedes intra-team points gap is now one of the clearest storylines heading into Baku.',
+    whatNext:'Baku gives Russell another chance to reduce the deficit.'
   },
   {
-    status: 'confirmed', source: 'Formula 1',
-    title: 'Kimi Antonelli set for a grid penalty at Monza',
-    description: 'Mercedes has confirmed a planned power-unit change will trigger a grid penalty for championship leader Kimi Antonelli at the Italian Grand Prix.',
-    link: 'https://www.formula1.com/en/latest/article/wolff-confirms-antonelli-is-set-for-grid-penalty-at-italian-grand-prix.4IIgVJdITz0W1xOIrbOPAM',
-    published: '2026-08-22T12:27:00Z',
-    kicker: 'Monza · Mercedes',
-    body: [
-      'Mercedes has confirmed that Kimi Antonelli is set to take a grid penalty at the Italian Grand Prix following a planned power-unit change.',
-      'The penalty matters because Antonelli arrives at Monza as championship leader. The exact impact will depend on the starting position, qualifying performance and how well Mercedes can recover positions on Sunday.',
-      'It also changes the strategic shape of the weekend for the title leader: qualifying remains important, but race pace and overtaking execution become even more valuable if Antonelli starts outside his natural qualifying position.'
+    status:'confirmed', source:'Formula 1', kicker:'Red Bull · Driver update',
+    title:'Hadjar’s Baku return remains undecided as recovery continues',
+    description:'Red Bull says Isack Hadjar’s recovery is progressing normally, but the team will wait before deciding whether he is ready to return in Azerbaijan.',
+    published:'2026-09-17T14:58:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Isack%20Hadjar%202025.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · driver reference visual',
+    link:'https://www.formula1.com/en/latest/article/nothing-wrong-with-isacks-recovery-laurent-mekies-on-when-isack-hadjar-will-return.5VYeVNlvMTpwjhT0zPCw8',
+    body:[
+      'Isack Hadjar has missed Zandvoort, Monza and Madrid while recovering from a wrist injury sustained during the summer break.',
+      'Red Bull team principal Laurent Mekies said there has been no additional setback and that the recovery is taking a normal amount of time.',
+      'The team plans to evaluate Hadjar again before deciding whether he is close enough to 100 percent to return to the car in Azerbaijan.'
     ],
-    keyFacts: ['Antonelli is championship leader', 'Power-unit change confirmed', 'Grid penalty applies at Monza'],
-    context: 'Monza is Ferrari\'s home race and the next round after Zandvoort, making the penalty particularly relevant to the championship battle.',
-    whyItMatters: 'A grid penalty does not decide a race, but it removes some of Antonelli\'s margin for error and gives his closest championship rivals an opportunity to reduce the points gap.',
-    whatNext: 'Watch qualifying, the confirmed penalty position and Mercedes\' race strategy once the starting grid is finalised.',
-    quotes: [],
-    related: ['/race-centre']
+    keyFacts:['Hadjar missed 3 races','Wrist injury','No additional setback','Baku decision pending'],
+    context:'Liam Lawson has been standing in for Hadjar at Red Bull, while Yuki Tsunoda has occupied Lawson’s Racing Bulls seat.',
+    whyItMatters:'Hadjar’s return changes the Red Bull and Racing Bulls driver line-up for the Baku weekend.',
+    whatNext:'Red Bull’s final assessment before Azerbaijan will determine whether Hadjar returns.'
   },
   {
-    status: 'confirmed', source: 'Formula 1',
-    title: 'Yuki Tsunoda puts himself back on the F1 radar after Zandvoort return',
-    description: 'Tsunoda finished P11 for Racing Bulls in his one-off Dutch Grand Prix appearance and believes the weekend showed what he can still offer under the 2026 regulations.',
-    link: 'https://www.formula1.com/en/latest/article/tsunoda-puts-himself-back-on-the-f1-radar-after-just-missing-the-points-in-zandvoort.5w7F5YHfJRJNwl5DxaffPb',
-    published: '2026-08-24T17:15:00Z',
-    kicker: 'Driver market · Racing Bulls',
-    body: [
-      'Yuki Tsunoda returned to a 2026 Formula 1 race weekend with Racing Bulls and finished just outside the points in P11.',
-      'The performance gave Tsunoda a useful reference point in the current-generation car and put his name back into the wider conversation around future opportunities.',
-      'The result itself is not a confirmed seat announcement. The established fact is the performance and Tsunoda\'s assessment of what the weekend demonstrated.'
+    status:'confirmed', source:'Formula 1', kicker:'Baku · Race preview',
+    title:'Baku is next: Round 15 arrives on September 26',
+    description:'Formula 1 heads to the 6.003-kilometre Baku City Circuit for the Azerbaijan Grand Prix, with the race scheduled for Saturday September 26.',
+    published:'2026-09-18T08:00:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20City%20Circuit.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · Baku City Circuit reference visual',
+    link:'https://www.formula1.com/en/racing/2026/azerbaijan',
+    body:[
+      'The Azerbaijan Grand Prix is Round 15 of the 2026 championship and takes place in Baku from September 24 to 26.',
+      'The Baku City Circuit is 6.003 kilometres long and the Grand Prix is scheduled for 51 laps.',
+      'Local-time sessions begin with FP1 at 12:30 on Thursday, qualifying at 16:00 on Friday and the Grand Prix at 15:00 on Saturday. The race start is 16:30 IST.'
     ],
-    keyFacts: ['P11 at Zandvoort', 'Racing Bulls return', 'No future seat confirmed by this report'],
-    context: 'Driver-market stories need careful separation between what has happened and what might happen next.',
-    whyItMatters: 'A strong substitute or one-off performance can improve a driver\'s negotiating position, but it does not automatically create a contract.',
-    whatNext: 'Future opportunities, team statements and confirmed driver-market announcements are the things to watch.',
-    quotes: [],
-    related: []
+    keyFacts:['Round 15','24–26 September','6.003 km','51 laps','Race: 15:00 Baku / 16:30 IST'],
+    context:'Baku combines a very long main straight with a narrow old-city section, making low drag and confidence under braking important setup considerations.',
+    whyItMatters:'It is the first race after Antonelli extended his championship lead to 81 points.',
+    whatNext:'Practice begins September 24.'
   },
   {
-    status: 'confirmed', source: 'Formula 1',
-    title: 'Charles Leclerc says Ferrari had the pace for more at Zandvoort',
-    description: 'Leclerc finished fifth and said Ferrari’s race pace was strong, but acknowledged that starting position made the podium difficult to reach.',
-    link: 'https://www.formula1.com/en/latest/article/leclerc-rues-bad-luck-in-zandvoort-but-admits-race-was-lost-thanks-to-starting-position.2Cz2Z5vHFt9xIAWEapEJnS',
-    published: '2026-08-24T10:53:00Z',
-    kicker: 'Ferrari · Zandvoort',
-    body: [
-      'Charles Leclerc finished fifth at Zandvoort, just 1.3 seconds from the podium, after Ferrari demonstrated stronger race pace than its qualifying positions suggested.',
-      'Leclerc pointed to the late Virtual Safety Car as an unlucky interruption and, more importantly, identified qualifying as the bigger reason Ferrari could not convert its pace into a podium.',
-      'Ferrari therefore leaves the Netherlands with a mixed picture: the underlying race performance was encouraging, but execution across qualifying, strategy and traffic still cost positions.'
+    status:'analysis', source:'SPECTATE desk · based on F1 reporting', kicker:'Baku · Analysis',
+    title:'Three questions SPECTATE is taking into Baku',
+    description:'Can Mercedes convert its championship advantage into another win, can Norris recover from the Madrid strategy loss, and how will Red Bull’s driver line-up look once Hadjar’s fitness is assessed?',
+    published:'2026-09-18T09:00:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20City%20Circuit.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · Baku City Circuit reference visual',
+    link:'https://www.formula1.com/en/racing/2026/azerbaijan',
+    body:[
+      'Mercedes arrives in Baku with Antonelli holding an 81-point advantage over Russell. That gives the team a strong championship position, but the street circuit’s long straight and narrow sections can produce a very different competitive picture.',
+      'Norris enters the weekend after losing the Spanish Grand Prix lead through the VSC and pit-stop sequence. The key question is whether McLaren can turn qualifying pace into clean race execution.',
+      'Red Bull also has an immediate operational question: Hadjar’s return remains undecided, while Lawson has scored sixth in Madrid after finishing seventh at Zandvoort.'
     ],
-    keyFacts: ['Leclerc P5', 'Hamilton P4', 'Ferrari showed strong race pace', 'Late VSC affected the recovery fight'],
-    context: 'Leclerc qualified sixth while Hamilton qualified fifth, putting both Ferraris behind the leading Mercedes and McLaren cars before the race began.',
-    whyItMatters: 'Ferrari is close enough to challenge the podium on pace, but it needs to start and execute weekends more cleanly if that pace is going to become points.',
-    whatNext: 'Monza is the immediate test. Ferrari will want to turn its Zandvoort race pace into a stronger qualifying and home-race result.',
-    quotes: [
-      {text: 'Today we just lacked a little bit of luck shall we say.', speaker: 'Charles Leclerc', source: 'Formula 1 · Dutch Grand Prix race-day comments'},
-      {text: 'The pace I think was strong.', speaker: 'Charles Leclerc', source: 'Formula 1 · Dutch Grand Prix race-day comments'}
-    ],
-    related: ['/editorial-ferrari']
+    keyFacts:['Antonelli +81','Norris recovering from P3 in Madrid','Hadjar return undecided','Lawson P6 in Madrid'],
+    context:'This is SPECTATE interpretation, not a prediction of the race result.',
+    whyItMatters:'Baku can reward a different balance of qualifying speed, straight-line efficiency and race execution than Madring.',
+    whatNext:'FP1 and FP2 on September 24 will provide the first direct evidence.'
   },
   {
-    status: 'analysis', source: 'SPECTATE desk · based on Formula 1 reporting',
-    title: 'What Zandvoort tells us about the fight heading into Monza',
-    description: 'Norris has momentum, Mercedes remains the benchmark and Ferrari showed stronger race pace than its qualifying position suggested. With Antonelli facing a grid penalty at Monza, the next round could reshape the championship fight without changing the underlying competitive picture.',
-    link: 'https://www.formula1.com/en/latest',
-    published: '2026-08-25T08:00:00Z',
-    kicker: 'SPECTATE analysis · Championship',
-    body: [
-      'Zandvoort did not produce a simple change of hierarchy. It produced a tighter picture: McLaren has momentum, Mercedes remains deeply competitive, and Ferrari appears closer over race distance than its qualifying results imply.',
-      'The most important variable heading into Monza may be conversion. Teams are now fighting over small margins in qualifying, tyre preparation, pit timing and clean-air performance rather than relying on one dominant package.',
-      'Antonelli\'s grid penalty adds another variable to the championship battle. It creates an opportunity for rivals, but only if they can execute a complete weekend.'
+    status:'speculation', source:'Formula 1 · driver-market reporting', kicker:'Rumour watch · Aston Martin',
+    title:'Alonso’s 2027 future remains unresolved',
+    description:'Fernando Alonso has still not announced whether he will continue racing for Aston Martin in 2027. The seat is therefore one of the major unresolved pieces of the driver market.',
+    published:'2026-09-18T07:30:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Japan%20GP%20-%20Aston%20Martin%20-%20Fernando%20Alonso%20-%20FP1.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · Liauzh · CC BY-SA 4.0',
+    link:'https://www.formula1.com/en/latest/article/its-not-my-biggest-priority-alonso-in-no-hurry-to-make-call-on-his-aston-martin-future.35uUOTMKs5twJIc1aJ6HJU',
+    body:[
+      'Fernando Alonso has not made a final public decision on whether he will continue as an Aston Martin race driver in 2027.',
+      'Aston Martin has said its focus is to continue with Alonso, while also making clear that the decision is ultimately his.',
+      'The possible outcomes — staying, stepping away from the cockpit or moving into another role — remain possibilities rather than confirmed plans.'
     ],
-    keyFacts: ['Norris won Zandvoort', 'Mercedes scored a double podium', 'Ferrari finished P4/P5', 'Antonelli faces a Monza grid penalty'],
-    context: 'This is editorial interpretation based on established Formula 1 race and team reporting.',
-    whyItMatters: 'The championship is increasingly being decided by execution at the margins. A single qualifying position or strategy call can change the podium without indicating a wholesale change in car performance.',
-    whatNext: 'Monza qualifying, Ferrari\'s home-race pace and Antonelli\'s recovery from his grid penalty are the clearest indicators to watch.',
-    quotes: [],
-    related: ['/editorial-ferrari']
+    keyFacts:['No 2027 decision announced','Aston Martin wants continuity','Alonso says the decision is still open','Speculation only'],
+    context:'This story belongs in the rumour ledger because the underlying fact is the unresolved decision, not any claimed replacement.',
+    whyItMatters:'An Alonso decision would affect one of the remaining open pieces of the 2027 driver market.',
+    whatNext:'Watch for Alonso or Aston Martin to announce a decision.'
   },
   {
-    status: 'speculation', source: 'Formula 1 · reported market speculation',
-    title: 'Fernando Alonso’s 2027 future remains one of the biggest open questions',
-    description: 'Alonso has not yet decided whether he will continue with Aston Martin beyond 2026, keeping one of the most important remaining seats in the 2027 market open.',
-    link: 'https://www.formula1.com/en/latest/article/its-not-my-biggest-priority-alonso-in-no-hurry-to-make-call-on-his-aston-martin-future.35uUOTMKs5twJIc1aJ6HJU',
-    published: '2026-08-21T10:57:00Z',
-    kicker: 'Rumour watch · Aston Martin',
-    body: [
-      'Fernando Alonso remains one of the major unresolved pieces of the 2027 driver market. Formula 1 reported after Zandvoort that the two-time World Champion is still in no hurry to decide whether he will remain with Aston Martin.',
-      'The confirmed part is that no final decision has been announced. The speculation concerns what Alonso ultimately chooses: another season with Aston Martin, a move elsewhere, or an exit from Formula 1.',
-      'That uncertainty is especially important because the top end of the market has become more settled after Max Verstappen, Lando Norris, Oscar Piastri, George Russell, Kimi Antonelli and the Williams pairing were largely taken out of the immediate silly-season equation.'
+    status:'speculation', source:'Formula 1 · driver-market reporting', kicker:'Rumour watch · Racing Bulls',
+    title:'Tsolov remains one of the names to watch for 2027',
+    description:'Nikola Tsolov continues to feature in Racing Bulls driver-market discussion after his F2 campaign and first F1 test, but no 2027 seat has been confirmed.',
+    published:'2026-09-18T08:30:00Z',
+    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20166%20F2%20%282%29.jpg?width=1600',
+    imageCredit:'Wikimedia Commons · F2 reference visual',
+    link:'https://www.formula1.com/en/latest/article/f2-title-leader-tsolov-completes-first-f1-test-with-racing-bulls.5SUvLrKpgvPLIN5mzqK7gr',
+    body:[
+      'Nikola Tsolov has continued to attract attention around the 2027 driver market while competing for the Formula 2 title.',
+      'He completed 690 kilometres in his first F1 test with Racing Bulls at Imola, part of the team’s Testing of Previous Cars programme.',
+      'Racing Bulls team principal Alan Permane previously described Tsolov as “next in line” while stressing that no timing or seat was guaranteed.'
     ],
-    keyFacts: ['No 2027 decision announced', 'Aston Martin seat remains the key question', 'Possible outcomes include staying or leaving F1', 'Speculation only'],
-    context: 'Formula 1 reporting says Alonso is considering the bigger question of whether he wants to continue racing, not simply whether an Aston Martin seat is available.',
-    whyItMatters: 'Alonso’s decision could unlock one of the most consequential remaining seats and trigger movement further down the grid.',
-    whatNext: 'Watch Alonso’s own comments, Aston Martin statements and any credible reporting that establishes a decision.',
-    quotes: [],
-    related: []
-  },
-  {
-    status: 'speculation', source: 'Motorsport.com · reported market speculation',
-    title: 'Rafael Câmara emerges as a live name in the 2027 seat scramble',
-    description: 'Ferrari junior Rafael Câmara has been linked with potential 2027 opportunities at Cadillac and Haas after a strong start to his Formula 2 campaign. Cadillac has since called the reports unsubstantiated, so SPECTATE keeps the story firmly in the rumour column.',
-    link: 'https://www.motorsport.com/f1/news/cadillac-claims-rafael-camara-2027-rumor-is-unsubstantiated-yet-admits-things-can-change/10846052/',
-    published: '2026-08-13T08:43:00Z',
-    kicker: 'Rumour watch · Ferrari academy / 2027',
-    body: [
-      'Rafael Câmara has become one of the junior drivers appearing repeatedly in 2027 F1-market discussion. Motorsport.com reported that Cadillac was tracking the Ferrari junior, with Haas also mentioned as a possible route into Formula 1.',
-      'The important counterweight is Cadillac’s public response: CEO Dan Towriss called the rumour unsubstantiated while leaving the door open to future changes. That means the market story exists, but there is no confirmed seat offer to report.',
-      'Câmara’s Formula 2 results are the part that can be assessed directly. The F1 seat question remains a possibility rather than an established outcome.'
-    ],
-    keyFacts: ['Ferrari junior', 'F2 contender', 'Cadillac interest reported', 'Haas also linked in reporting', 'Cadillac publicly called the rumour unsubstantiated'],
-    context: 'This is exactly the type of driver-market story SPECTATE labels as speculation: there is reporting to discuss, but the team has not confirmed the move.',
-    whyItMatters: 'If a junior driver is elevated, it can change the market for experienced drivers competing for the same vacancies at Cadillac, Haas and elsewhere.',
-    whatNext: 'Câmara’s F2 results, Cadillac/Haas statements and any confirmed contract or test announcements.',
-    quotes: [],
-    related: []
-  },
-  {
-    status: 'speculation', source: 'Formula 1 · reported speculation and team denial',
-    title: 'Nikola Tsolov-to-Racing Bulls chatter was denied — but the rumour shows how fluid the junior market is',
-    description: 'Racing Bulls team principal Alan Permane rejected reports that Nikola Tsolov had been offered a 2027 seat. The rumour is therefore not a confirmed transfer, but it remains useful market context.',
-    link: 'https://www.formula1.com/en/latest/article/we-havent-spoken-about-it-at-all-permane-shuts-down-tsolov-seat-rumours-for-2027.7vh1bqpOCAsf6UAG6qtGRe',
-    published: '2026-06-27T07:37:00Z',
-    kicker: 'Rumour watch · Racing Bulls',
-    body: [
-      'Earlier in the season, reports circulated that Formula 2 driver Nikola Tsolov could be in line for a Racing Bulls seat in 2027.',
-      'Racing Bulls team principal Alan Permane directly pushed back on that claim, saying the team had not even discussed the move internally. That makes a Tsolov seat an unconfirmed rumour rather than a developing deal.',
-      'The story remains relevant because Racing Bulls is one of the teams where junior-driver performance and Red Bull’s wider driver programme can create rapid changes in the line-up.'
-    ],
-    keyFacts: ['Tsolov is a Formula 2 prospect', 'Racing Bulls link was reported', 'Team principal denied internal discussions', 'No seat confirmed'],
-    context: 'A denial is still useful newsroom information: it tells readers the rumour exists and also records the team’s current position.',
-    whyItMatters: 'Racing Bulls has historically been a major pathway for Red Bull juniors, so even denied rumours can signal which drivers are being discussed around the wider programme.',
-    whatNext: 'Follow Tsolov’s F2 campaign and any future Racing Bulls or Red Bull junior-programme announcements.',
-    quotes: [],
-    related: []
-  },
-  {
-    status: 'speculation', source: 'Motorsport.com · reported market speculation',
-    title: 'Could Liam Lawson’s Red Bull return change the 2027 picture?',
-    description: 'Lawson’s unexpected return to Red Bull at Zandvoort produced a P7 finish and revived discussion around his place in the Red Bull driver system. Nothing about a 2027 promotion has been confirmed.',
-    link: 'https://www.formula1.com/en/latest/article/how-super-sub-lawson-rose-to-the-challenge-of-driving-this-years-red-bull.4EkibOrkZOGpCYiVCIE24I',
-    published: '2026-08-24T16:53:00Z',
-    kicker: 'Rumour watch · Red Bull driver programme',
-    body: [
-      'Liam Lawson was unexpectedly recalled to Red Bull for Zandvoort after Isack Hadjar’s injury. He finished seventh, turning a difficult last-minute opportunity into a points-scoring return to the senior team.',
-      'The result does not create a 2027 contract or establish that Lawson will replace anyone. It does, however, give Red Bull another data point when evaluating its pool of drivers around Verstappen and Hadjar.',
-      'Because Red Bull’s senior and sister-team seats are closely connected, Lawson’s performance can influence the wider conversation even if the immediate explanation for his return was Hadjar’s injury.'
-    ],
-    keyFacts: ['Lawson returned to Red Bull as a substitute', 'P7 at Zandvoort', 'Hadjar’s injury triggered the call-up', 'No 2027 promotion confirmed'],
-    context: 'Red Bull has now committed Verstappen through 2030, so the remaining question is how the team manages its other seats and its wider junior pool.',
-    whyItMatters: 'A strong substitute performance can alter internal rankings even without an immediate contract change, especially in a team with multiple drivers under its umbrella.',
-    whatNext: 'Hadjar’s return, Lawson’s remaining opportunities and any Red Bull/Racing Bulls driver announcements.',
-    quotes: [],
-    related: []
+    keyFacts:['F2 title contender','First F1 test completed','690 km at Imola','Racing Bulls seat not confirmed'],
+    context:'The test and Permane’s comments are established facts; a 2027 promotion remains speculation.',
+    whyItMatters:'Racing Bulls is one of the teams where the Red Bull junior pipeline could affect the 2027 grid.',
+    whatNext:'Tsolov’s F2 results and any Racing Bulls or Red Bull announcement will provide the next evidence.'
   }
 ];
 
-const clean = (value = '') => value.replace(/<!\\[CDATA\\[|\\]\\]>/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
-
-const imageFromHtml = async (url) => {
-  try {
-    const r = await fetch(url, {
-      headers: { 'user-agent': 'SPECTATE-MOTION/1.0' },
-      signal: AbortSignal.timeout(6000)
-    });
-    if (!r.ok) return '';
-    const html = await r.text();
-    const m = html.match(/<meta[^>]+property=[\"']og:image[\"'][^>]+content=[\"']([^\"']+)[\"']/i) || html.match(/<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+property=[\"']og:image[\"']/i);
-    return m ? m[1] : '';
-  } catch { return ''; }
-};
-
-const MANUAL_IMAGES = {
-  'Rafael Câmara emerges as a live name in the 2027 seat scramble': 'https://res.cloudinary.com/prod-f2f3/image/upload/v1771928650/f2/global/articles/2026/02_February/GettyImages-2262493663.jpg',
-  'What Zandvoort tells us about the fight heading into Monza': 'https://commons.wikimedia.org/wiki/Special:FilePath/Monza%20aerial%20photo.jpg?width=1600'
-};
-
-export default async function handler(req, res) {
-  try {
-    const stories = await Promise.all(CURATED.map(async story => ({
-      ...story,
-      image: story.title.startsWith('Sebastian Vettel')
-        ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vettel_Ferrari_Monza_2017.jpg/1600px-Vettel_Ferrari_Monza_2017.jpg'
-        : MANUAL_IMAGES[story.title] || await imageFromHtml(story.link)
-    })));
-
-    stories.sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
-
-    res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=900');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    return res.status(200).json({
-      updatedAt: new Date().toISOString(),
-      stories,
-      policy: 'Formula 1 is the primary newsroom source. Confirmed means the underlying fact is established. SPECTATE analysis is written separately. Rumours remain explicitly labelled as speculation.'
-    });
-  } catch (error) {
-    return res.status(502).json({ error: 'Newsroom unavailable', detail: clean(error.message) });
-  }
+export default function handler(req,res){
+  res.setHeader('Cache-Control','s-maxage=120, stale-while-revalidate=300');
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.status(200).json({
+    updatedAt:'2026-09-18T10:42:00Z',
+    stories:STORIES,
+    policy:'Formula 1, FIA, teams and drivers are the primary sources. Confirmed means the underlying fact is established. SPECTATE analysis is separated from reporting. Rumours remain explicitly labelled as speculation.'
+  });
 }
