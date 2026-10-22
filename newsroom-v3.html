@@ -11,6 +11,26 @@
 .rumours{margin-top:38px}.rumour-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}.rumour-grid .card{padding:0 18px 22px 0;margin-right:18px}.rumour-grid .card:not(:first-child){padding-left:18px}.rumour-grid .card:last-child{margin-right:0}
 .report-modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:14px;z-index:999}.report-modal.open{display:flex}.report{background:var(--paper);width:min(1120px,100%);max-height:94vh;overflow:auto}.report-close{position:sticky;top:12px;float:right;margin:12px;width:38px;height:38px;background:var(--paper);border:1px solid var(--ink);font:700 20px Arial;cursor:pointer;z-index:2}.report-hero{display:block;width:100%;height:400px;object-fit:cover;background:var(--mist)}.report-credit{font:7px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#777970;padding:7px 34px 0}.report-credit a,.image-credit a{color:inherit;text-decoration:underline}.report-fallback{height:400px;background:var(--forest);color:var(--paper);display:flex;align-items:flex-end;padding:30px;font:500 54px/.9 var(--serif)}.report-body{padding:28px 34px 48px}.report-body h2{font:500 clamp(38px,5vw,68px)/.9 var(--serif);letter-spacing:-.06em;margin:8px 0 12px}.deck{font:18px/1.5 var(--serif);max-width:820px}.report-meta{display:flex;gap:20px;flex-wrap:wrap;padding:12px 0;margin:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:8px var(--sans);letter-spacing:.08em;text-transform:uppercase}.report-columns{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:30px}.copy{font:18px/1.65 var(--serif);max-width:760px}.copy p{margin:0 0 20px}.side{border-left:1px solid var(--line);padding-left:18px}.side h3{font:500 24px/.95 var(--serif);margin:0 0 9px}.side p,.side li{font:12px/1.5 var(--serif);color:#4c5048}.side ul{padding:0;margin:0 0 22px;list-style:none}.side li{padding:8px 0;border-top:1px solid var(--line)}.side a{text-decoration:underline}.error{padding:22px 0;border-top:1px solid var(--line);font:15px var(--serif)}
 @media(max-width:800px){.news-grid{display:block}.news-grid .card,.news-grid .card:nth-child(n){border-left:0;padding-left:0;padding-right:0}.card:nth-child(1) .thumb,.card .thumb,.card:nth-child(6) .thumb,.card:nth-child(9) .thumb{height:260px}.card:nth-child(1) h2{font-size:36px}.rumour-grid{display:block}.rumour-grid .card{border-right:0;border-bottom:1px solid var(--line);margin:0;padding-right:0!important;padding-left:0!important}.report{height:100vh;max-height:none}.report-hero,.report-fallback{height:240px}.report-credit{padding-left:18px}.report-body{padding:20px 18px 35px}.report-columns{display:block}.side{border-left:0;border-top:1px solid var(--line);padding:18px 0 0;margin-top:20px}.copy{font-size:16px}}
+
+.card{transition:background .22s ease,transform .22s ease;padding-top:16px}
+.card:hover{background:rgba(30,38,30,.035)}
+.card:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+.card-visual{position:relative}
+.thumb{transition:transform .35s ease,filter .35s ease}
+.card:hover .thumb{filter:saturate(1.08)}
+.image-credit{font-size:7px;line-height:1.4}
+.read-cue{display:inline-block;margin-top:8px;font:800 8px var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.empty-state{grid-column:1/-1;padding:28px 18px 34px;font:15px/1.6 var(--serif);color:#55584f;border-bottom:1px solid var(--line)}
+.rumour-empty{border-top:1px solid var(--line);margin:0;padding:20px 0}
+.rumour-empty p{max-width:650px}
+.visual-fallback{display:flex;align-items:flex-end;justify-content:flex-start;min-height:210px;padding:18px;background:linear-gradient(135deg,#17221d,#3a4a3d 58%,#8b4a31);color:#f5f1e8;font:500 24px/.98 var(--serif);letter-spacing:-.03em}
+.report-fallback{min-height:280px}
+.report-visual .report-hero{display:block}
+.report-visual .report-credit{padding:7px 34px 0}
+.report-visual .report-hero{width:100%;height:400px;object-fit:cover}
+.report-visual .report-credit a,.image-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:800px){.card{padding-top:0}.visual-fallback{min-height:240px}.report-visual .report-hero{height:240px}}
+
 </style>
 </head>
 <body>
@@ -29,40 +49,148 @@
 </main>
 <div id="modal" class="report-modal" aria-hidden="true"><article class="report" role="dialog" aria-modal="true"><button id="close" class="report-close" aria-label="Close report">×</button><div id="report-image"></div><div id="report-credit" class="report-credit"></div><div class="report-body"><div id="report-kicker" class="kicker"></div><div id="report-status" class="status"></div><h2 id="report-title"></h2><p id="report-deck" class="deck"></p><div class="report-meta"><span id="report-date"></span><span id="report-source"></span><span>SPECTATE original report</span></div><div class="report-columns"><div id="report-copy" class="copy"></div><aside class="side"><h3>Key facts</h3><ul id="facts"></ul><h3>Why it matters</h3><p id="why"></p><h3>What next</h3><p id="next"></p><h3>Context</h3><p id="context"></p><div id="source-link"></div></aside></div></div></article></div>
 <script>
-(function(){'use strict';
-var grid=document.getElementById('news-grid'),rumourGrid=document.getElementById('rumour-grid'),modal=document.getElementById('modal'),stories=[],currentFilter='all';
-var VISUALS={\n 'Austin race week: the full F1 schedule in IST':['https://commons.wikimedia.org/wiki/Special:FilePath/Circuit%20of%20the%20Americas%2C%20Austin%2C%20TX%20%2830066328424%29.jpg?width=1600','Photo: Pedro Mendes · Wikimedia Commons · CC BY 2.0','https://commons.wikimedia.org/wiki/File:Circuit_of_the_Americas,_Austin,_TX_(30066328424).jpg'],
- 'Sebastian Vettel to drive Michael Schumacher’s Ferrari F2002 at Monza':['https://commons.wikimedia.org/wiki/Special:FilePath/2002%20Ferrari%20F2002.jpg?width=1600','Wikimedia Commons · Calreyn88 · CC BY-SA 4.0'],
- 'Lando Norris wins the final Dutch Grand Prix as Antonelli takes P2':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20ImolaGP%20Lando%20Norris.jpg?width=1600','Wikimedia Commons · Buczkowiak94 · CC BY 4.0'],
- 'Kimi Antonelli set for a grid penalty at Monza':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Japan%20GP%20-%20Mercedes%20-%20Kimi%20Antonelli%20-%20FP2.jpg?width=1600','Wikimedia Commons · Liauzh · CC BY-SA 4.0'],
- 'Yuki Tsunoda puts himself back on the F1 radar after Zandvoort return':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20ImolaGP%20Yuki%20Tsunoda.jpg?width=1600','Wikimedia Commons · Buczkowiak94 · CC BY 4.0'],
- 'Charles Leclerc says Ferrari had the pace for more at Zandvoort':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20ImolaGP%20Leclerc.jpg?width=1600','Wikimedia Commons · Buczkowiak94 · CC BY 4.0'],
- 'What Zandvoort tells us about the fight heading into Monza':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Emilia%20Romagna%20Grand%20Prix%2004.jpg?width=1600','Wikimedia Commons · 2025 Emilia Romagna Grand Prix visual'],
- 'Fernando Alonso’s 2027 future remains one of the biggest open questions':['https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Japan%20GP%20-%20Aston%20Martin%20-%20Fernando%20Alonso%20-%20FP1.jpg?width=1600','Wikimedia Commons · Liauzh · CC BY-SA 4.0'],
- 'Rafael Câmara emerges as a live name in the 2027 seat scramble':['https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20166%20F2%20%282%29.jpg?width=1600','Wikimedia Commons · Ferrari F2 reference visual'],
- 'Nikola Tsolov':['https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20166%20F2.jpg?width=1600','Wikimedia Commons · Ferrari F2 reference visual'],
- 'Liam Lawson':['https://commons.wikimedia.org/wiki/Special:FilePath/FIA%20F1%20Imola%202025%20No.%2030%20Lawson.jpg?width=1600','Wikimedia Commons · FIA F1 Imola 2025 visual']
-};
-function t(v){return v==null?'':String(v)}
-function d(v){var x=new Date(v);return isNaN(x.getTime())?'':x.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
-function label(v){return v==='speculation'?'Speculation':v==='analysis'?'Analysis':'Confirmed'}
-function visualFor(s){var exact=VISUALS[t(s.title)];if(exact)return exact;var k=Object.keys(VISUALS).find(function(x){return t(s.title).indexOf(x)!==-1||x.indexOf(t(s.title))!==-1});return k?VISUALS[k]:null}
-function makeImage(s,large){var pair=visualFor(s),src=t(s.image)|| (pair?pair[0]:'');if(!src){var b=document.createElement('div');b.className=large?'report-fallback':'fallback';var st=document.createElement('strong');st.textContent=t(s.title).split(' ').slice(0,6).join(' ');b.appendChild(st);return b}var img=document.createElement('img');img.className=large?'report-hero':'thumb';img.src=src;img.alt=t(s.title);if(!large)img.loading='lazy';img.onerror=function(){var p=visualFor(s);if(p&&src!==p[0]){img.src=p[0];return}var b=document.createElement('div');b.className=large?'report-fallback':'fallback';var st=document.createElement('strong');st.textContent='Story visual unavailable';b.appendChild(st);img.replaceWith(b)};return img}
-function card(s,i){var a=document.createElement('article');a.className='card';a.dataset.index=i;a.appendChild(makeImage(s,false));var pair=visualFor(s);if(pair){var cr=document.createElement('div');cr.className='image-credit';if(pair[2]){var creditLink=document.createElement('a');creditLink.href=pair[2];creditLink.target='_blank';creditLink.rel='noreferrer';creditLink.textContent=pair[1];cr.appendChild(creditLink)}else{cr.textContent=pair[1]}a.appendChild(cr)}var k=document.createElement('div');k.className='kicker';k.textContent=t(s.kicker)||'SPECTATE desk';a.appendChild(k);var st=document.createElement('div');st.className='status '+t(s.status);st.textContent=label(s.status);a.appendChild(st);var h=document.createElement('h2');h.textContent=t(s.title);a.appendChild(h);var p=document.createElement('p');p.textContent=t(s.description);a.appendChild(p);var m=document.createElement('div');m.className='meta';var so=document.createElement('span');so.textContent=t(s.source)||'Source';var dt=document.createElement('span');dt.textContent=d(s.published);m.appendChild(so);m.appendChild(dt);a.appendChild(m);return a}
-function render(){var v=stories.filter(function(s){return currentFilter==='all'||s.status===currentFilter});grid.innerHTML='';rumourGrid.innerHTML='';if(!v.length){grid.innerHTML='<div class="error">No stories in this section.</div>';return}v.forEach(function(s){grid.appendChild(card(s,stories.indexOf(s)))});stories.filter(function(s){return s.status==='speculation'}).forEach(function(s){rumourGrid.appendChild(card(s,stories.indexOf(s)))});}
-function openReport(i){var s=stories[i];if(!s)return;var ri=document.getElementById('report-image');ri.innerHTML='';ri.appendChild(makeImage(s,true));var pair=visualFor(s);var reportCredit=document.getElementById('report-credit');reportCredit.textContent='';if(pair){if(pair[2]){var reportCreditLink=document.createElement('a');reportCreditLink.href=pair[2];reportCreditLink.target='_blank';reportCreditLink.rel='noreferrer';reportCreditLink.textContent=pair[1];reportCredit.appendChild(reportCreditLink)}else{reportCredit.textContent=pair[1]}}document.getElementById('report-kicker').textContent=t(s.kicker)||'SPECTATE desk';var st=document.getElementById('report-status');st.className='status '+t(s.status);st.textContent=label(s.status);document.getElementById('report-title').textContent=t(s.title);document.getElementById('report-deck').textContent=t(s.description);document.getElementById('report-date').textContent=d(s.published);document.getElementById('report-source').textContent=t(s.source)||'Source';var copy=document.getElementById('report-copy');copy.innerHTML='';(Array.isArray(s.body)?s.body:[]).forEach(function(x){var p=document.createElement('p');p.textContent=t(x);copy.appendChild(p)});var facts=document.getElementById('facts');facts.innerHTML='';(Array.isArray(s.keyFacts)?s.keyFacts:[]).forEach(function(x){var li=document.createElement('li');li.textContent=t(x);facts.appendChild(li)});document.getElementById('why').textContent=t(s.whyItMatters)||'—';document.getElementById('next').textContent=t(s.whatNext)||'—';document.getElementById('context').textContent=t(s.context)||'—';var sl=document.getElementById('source-link');sl.innerHTML='';if(s.link){var p2=document.createElement('p'),a=document.createElement('a');a.href=s.link;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open source report →';p2.appendChild(a);sl.appendChild(p2)}modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function closeReport(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-grid.addEventListener('click',function(e){var c=e.target.closest('.card');if(c)openReport(Number(c.dataset.index))});rumourGrid.addEventListener('click',function(e){var c=e.target.closest('.card');if(c)openReport(Number(c.dataset.index))});document.getElementById('close').addEventListener('click',closeReport);modal.addEventListener('click',function(e){if(e.target===modal)closeReport()});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeReport()});document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){currentFilter=b.dataset.filter;document.querySelectorAll('.filters button').forEach(function(x){x.classList.toggle('active',x===b)});render()})});
-const STORIES = [
-{status:'confirmed',source:'Formula 1 / Reuters',kicker:'Singapore · Race',title:'Verstappen wins Singapore as Antonelli extends title lead',description:'Max Verstappen won the Singapore Grand Prix ahead of Charles Leclerc and Kimi Antonelli. Antonelli now leads George Russell by 102 points.',published:'2026-10-11T14:00:00Z',link:'https://www.reuters.com/sports/formula1/red-bulls-verstappen-wins-singapore-grand-prix-2026-10-11/',body:['Verstappen led the 62-lap race from pole for his first Singapore Grand Prix victory.','Charles Leclerc finished second, with Kimi Antonelli third for Mercedes.','Antonelli’s lead over George Russell is 102 points after Round 17. A title clinch in Austin is mathematically possible, subject to rival results.'],keyFacts:['Verstappen P1','Leclerc P2','Antonelli P3','Antonelli 340 · Russell 238','Next: United States GP · 23–25 Oct'],context:'Official Formula 1 classification and Reuters report published 11 October 2026.',whyItMatters:'Antonelli strengthens his title position while Verstappen has won consecutive Grands Prix.',whatNext:'Round 18 is the United States Grand Prix at Circuit of The Americas, 23–25 October.'},
-{status:'confirmed',source:'Formula 1',kicker:'Calendar · Austin',title:'United States Grand Prix is next on 23–25 October',description:'Formula 1 returns to Circuit of The Americas for Round 18. The race begins at 20:00 UTC on Sunday, 25 October — 01:30 IST on Monday, 26 October.',published:'2026-10-14T10:30:00Z',link:'https://www.formula1.com/en/racing/2026/united-states',body:['Practice 1 is scheduled for 17:30–18:30 local time on Friday, 23 October.','Practice 2 is Friday 21:00–22:00 local; Practice 3 is Saturday 17:30–18:30 local; qualifying is Saturday 21:00–22:00 local.','The race is Sunday 25 October at 20:00 UTC (15:00 in Austin, 01:30 IST on Monday 26 October).'],keyFacts:['Round 18','Circuit of The Americas · 5.513 km','56 laps','Race · 25 Oct 20:00 UTC','Race · 26 Oct 01:30 IST'],context:'Official Formula 1 United States Grand Prix schedule, checked 14 October 2026.',whyItMatters:'The race is the next opportunity for Antonelli to potentially secure the drivers’ title.',whatNext:'Practice begins Friday, 23 October.'},
-{status:'analysis',source:'SPECTATE desk',kicker:'Championship · Analysis',title:'Antonelli’s 102-point buffer makes Austin a title watch',description:'A 102-point advantage puts Kimi Antonelli in position to potentially clinch the championship in Austin, but the outcome depends on rival results.',published:'2026-10-14T10:00:00Z',link:'https://www.formula1.com/en/results/2026/driver',body:['Antonelli has 340 points after Singapore, with George Russell on 238.','A title clinch at the United States Grand Prix is possible under some result combinations; it is not guaranteed.','SPECTATE’s qualitative assessment is editorial analysis, not a statistical model or betting market.'],keyFacts:['Antonelli 340','Russell 238','Gap 102 points','Austin · 23–25 Oct'],context:'Standings and title scenarios should be checked against official F1 points tables and published sporting regulations.',whyItMatters:'The title battle could move from a season-long contest to a clinch scenario at COTA.',whatNext:'Update the title scenarios after official Austin qualifying and race results.'},
-{status:'speculation',source:'SPECTATE rumour ledger',kicker:'Driver market · Speculation',title:'No unconfirmed 2027 seat rumour is being treated as a done deal',description:'SPECTATE will only promote driver-market claims when there is a credible source, and will keep unannounced moves labelled as speculation.',published:'2026-10-14T09:00:00Z',link:'https://www.formula1.com/en/latest',body:['No specific driver move is asserted here without a fresh, attributable report.','Official team announcements and direct driver statements take precedence over paddock speculation.','This entry is an editorial reminder of the newsroom standard, not a report of a new signing.'],keyFacts:['No deal claimed','Official statements take priority','Speculation labelled clearly'],context:'Editorial policy entry; not a claim that a driver transfer has occurred.',whyItMatters:'Clear labelling helps readers distinguish confirmation from market chatter.',whatNext:'This entry will be replaced when a properly sourced development emerges.'}
-];
-stories=STORIES.slice().sort(function(a,b){return new Date(b.published)-new Date(a.published)});
-document.getElementById('feed-status').textContent='Editorial feed · updated 14 Oct 2026 · source links included';
-document.getElementById('updated').textContent='Updated 14 Oct 2026';
-render();
+(function(){
+  'use strict';
+  var grid=document.getElementById('news-grid');
+  var rumourGrid=document.getElementById('rumour-grid');
+  var modal=document.getElementById('modal');
+  var stories=[];
+  var currentFilter='all';
+  var statusNode=document.getElementById('feed-status');
+  var updatedNode=document.getElementById('updated');
+
+  function text(v){return v==null?'':String(v)}
+  function date(v){
+    var x=new Date(v);
+    return isNaN(x.getTime())?'':x.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric',timeZone:'Asia/Kolkata'});
+  }
+  function label(v){return v==='speculation'?'Speculation':v==='analysis'?'Analysis':'Confirmed'}
+  function makeVisual(s,large){
+    if(s.image){
+      var wrap=document.createElement('div');
+      wrap.className=large?'report-visual':'card-visual';
+      var img=document.createElement('img');
+      img.className=large?'report-hero':'thumb';
+      img.src=s.image;
+      img.alt=text(s.imageAlt)||text(s.title);
+      img.loading=large?'eager':'lazy';
+      img.decoding='async';
+      img.onerror=function(){
+        wrap.innerHTML='';
+        var fallback=document.createElement('div');
+        fallback.className='visual-fallback';
+        fallback.textContent=text(s.kicker)||'SPECTATE / F1';
+        wrap.appendChild(fallback);
+      };
+      wrap.appendChild(img);
+      if(s.imageCredit){
+        var credit=document.createElement('div');
+        credit.className=large?'report-credit':'image-credit';
+        var link=document.createElement('a');
+        link.href=text(s.imageCreditUrl)||text(s.link)||'#';
+        link.target='_blank';
+        link.rel='noopener noreferrer';
+        link.textContent=text(s.imageCredit);
+        credit.appendChild(link);
+        wrap.appendChild(credit);
+      }
+      return wrap;
+    }
+    var fallback=document.createElement('div');
+    fallback.className=large?'report-fallback':'thumb visual-fallback';
+    fallback.textContent=text(s.kicker)||'SPECTATE / F1';
+    return fallback;
+  }
+  function card(s){
+    var a=document.createElement('article');
+    a.className='card';
+    a.tabIndex=0;
+    a.setAttribute('role','button');
+    a.setAttribute('aria-label','Open report: '+text(s.title));
+    a.dataset.id=text(s.id);
+    a.appendChild(makeVisual(s,false));
+    var k=document.createElement('div');k.className='kicker';k.textContent=text(s.kicker)||'SPECTATE desk';a.appendChild(k);
+    var st=document.createElement('div');st.className='status '+text(s.status);st.textContent=label(s.status);a.appendChild(st);
+    var h=document.createElement('h2');h.textContent=text(s.title);a.appendChild(h);
+    var p=document.createElement('p');p.textContent=text(s.description);a.appendChild(p);
+    var m=document.createElement('div');m.className='meta';
+    var so=document.createElement('span');so.textContent=text(s.source)||'Source';
+    var dt=document.createElement('span');dt.textContent=date(s.published);
+    m.appendChild(so);m.appendChild(dt);a.appendChild(m);
+    var open=document.createElement('span');open.className='read-cue';open.textContent='Read report ↗';a.appendChild(open);
+    return a;
+  }
+  function render(){
+    var visible=stories.filter(function(s){return currentFilter==='all'||s.status===currentFilter});
+    grid.innerHTML='';
+    if(!visible.length){
+      var empty=document.createElement('div');empty.className='empty-state';empty.textContent='No reports in this filter yet. We will publish when there is something worth reporting.';grid.appendChild(empty);
+    }else{
+      visible.forEach(function(s){grid.appendChild(card(s))});
+    }
+    var rumours=stories.filter(function(s){return s.status==='speculation'});
+    rumourGrid.innerHTML='';
+    if(!rumours.length){
+      var quiet=document.createElement('div');quiet.className='empty-state rumour-empty';quiet.innerHTML='<strong>No fresh rumour has cleared our bar.</strong><p>We will not invent a transfer story just to fill this space. A claim needs an attributable source and stays labelled until confirmed.</p>';rumourGrid.appendChild(quiet);
+    }else{
+      rumours.forEach(function(s){rumourGrid.appendChild(card(s))});
+    }
+    document.querySelectorAll('.filters button').forEach(function(b){b.classList.toggle('active',b.dataset.filter===currentFilter)});
+  }
+  function openReport(id){
+    var s=stories.find(function(x){return text(x.id)===text(id)});
+    if(!s)return;
+    var image=document.getElementById('report-image');image.innerHTML='';image.appendChild(makeVisual(s,true));
+    document.getElementById('report-kicker').textContent=text(s.kicker)||'SPECTATE desk';
+    var st=document.getElementById('report-status');st.className='status '+text(s.status);st.textContent=label(s.status);
+    document.getElementById('report-title').textContent=text(s.title);
+    document.getElementById('report-deck').textContent=text(s.description);
+    document.getElementById('report-date').textContent=date(s.published);
+    document.getElementById('report-source').textContent=text(s.source)||'Source';
+    var copy=document.getElementById('report-copy');copy.innerHTML='';
+    (Array.isArray(s.body)?s.body:[]).forEach(function(paragraph){var p=document.createElement('p');p.textContent=text(paragraph);copy.appendChild(p)});
+    var facts=document.getElementById('facts');facts.innerHTML='';
+    (Array.isArray(s.keyFacts)?s.keyFacts:[]).forEach(function(fact){var li=document.createElement('li');li.textContent=text(fact);facts.appendChild(li)});
+    document.getElementById('why').textContent=text(s.whyItMatters)||'—';
+    document.getElementById('next').textContent=text(s.whatNext)||'—';
+    document.getElementById('context').textContent=text(s.context)||'—';
+    var source=document.getElementById('source-link');source.innerHTML='';
+    if(s.link){var p2=document.createElement('p'),a=document.createElement('a');a.href=s.link;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open original source ↗';p2.appendChild(a);source.appendChild(p2)}
+    modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    document.getElementById('close').focus();
+  }
+  function closeReport(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+  function onCardClick(e){
+    if(e.target.closest('a'))return;
+    var c=e.target.closest('.card');if(c)openReport(c.dataset.id);
+  }
+  grid.addEventListener('click',onCardClick);
+  rumourGrid.addEventListener('click',onCardClick);
+  [grid,rumourGrid].forEach(function(node){node.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('card')){e.preventDefault();openReport(e.target.dataset.id)}})});
+  document.getElementById('close').addEventListener('click',closeReport);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeReport()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeReport()});
+  document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){currentFilter=b.dataset.filter;render()})});
+  fetch('/api/news',{headers:{'Accept':'application/json'},cache:'no-store'})
+    .then(function(response){if(!response.ok)throw new Error('News API returned '+response.status);return response.json()})
+    .then(function(payload){
+      if(!payload||!Array.isArray(payload.stories))throw new Error('News API response is missing stories');
+      stories=payload.stories.slice().sort(function(a,b){return new Date(b.published)-new Date(a.published)});
+      if(!stories.length)throw new Error('News feed is empty');
+      var count=stories.length;
+      statusNode.textContent='Source-led desk · '+count+' reports · last checked 22 Oct 2026';
+      updatedNode.textContent='Updated 22 Oct 2026';
+      render();
+    })
+    .catch(function(error){
+      console.error('SPECTATE newsroom:',error);
+      statusNode.textContent='News feed unavailable';
+      grid.innerHTML='';
+      var err=document.createElement('div');err.className='error';
+      err.innerHTML='The newsroom feed could not load. <a href="https://www.formula1.com/en/latest">Open Formula 1 latest news ↗</a>';
+      grid.appendChild(err);
+      rumourGrid.innerHTML='<div class="empty-state">Rumours are hidden until the feed is available. We will not fill this space with stale copy.</div>';
+    });
 })();
 </script>
 </body></html>
