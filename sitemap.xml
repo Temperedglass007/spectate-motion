@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://spectate-motion.vercel.app/</loc></url><url><loc>https://spectate-motion.vercel.app/newsroom.html</loc></url><url><loc>https://spectate-motion.vercel.app/race-centre.html</loc></url><url><loc>https://spectate-motion.vercel.app/predictions.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://spectate-motion.vercel.app/</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/newsroom</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/race-centre</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/predictions</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/calendar</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/guide-2026</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/editorial</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/about</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/contact</loc></url>
+  <url><loc>https://spectate-motion.vercel.app/source-policy.html</loc></url>
+</urlset>

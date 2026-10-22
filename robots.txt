@@ -1,1 +1,3 @@
-User-agent: *`nAllow: /`nSitemap: https://spectate-motion.vercel.app/sitemap.xml
+User-agent: *
+Allow: /
+Sitemap: https://spectate-motion.vercel.app/sitemap.xml
