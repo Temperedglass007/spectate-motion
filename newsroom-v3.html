@@ -178,8 +178,9 @@
       stories=payload.stories.slice().sort(function(a,b){return new Date(b.published)-new Date(a.published)});
       if(!stories.length)throw new Error('News feed is empty');
       var count=stories.length;
-      statusNode.textContent='Source-led desk · '+count+' reports · last checked 22 Oct 2026';
-      updatedNode.textContent='Updated 22 Oct 2026';
+      var refreshed=date(payload.updatedAt)||'date unavailable';
+      statusNode.textContent='Source-led desk · '+count+' reports · updated '+refreshed;
+      updatedNode.textContent='Updated '+refreshed;
       render();
     })
     .catch(function(error){
