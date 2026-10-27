@@ -128,8 +128,8 @@ const STORIES = [
     "description": "Team principal Alan Permane says the team expects to choose its 2027 line-up in the coming weeks. That confirms an open decision, not a signed deal.",
     "published": "2026-10-11T06:08:00Z",
     "link": "https://www.formula1.com/en/latest/article/permane-states-racing-bulls-will-select-their-2027-driver-line-up-in-the-coming-weeks.39Cso2HINAEU5KViOulOZb",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg/1920px-2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg",
-    "imageAlt": "Archival Formula 1 action from the 2026 Chinese Grand Prix; illustrative season image",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%20Chinese%20GP%20-%20Racing%20Bulls%20-%20Liam%20Lawson%20-%20Qualifying.jpg?width=1600",
+    "imageAlt": "Liam Lawson driving the Racing Bulls Formula 1 car during qualifying at the 2026 Chinese Grand Prix",
     "body": [
       "Racing Bulls team principal Alan Permane has said the team expects to make its 2027 driver-line-up decision in the coming weeks, according to Formula 1's report published on 11 October.",
       "Liam Lawson and Arvid Lindblad are the names in focus in that report. It does not announce a final selection, and it should not be read as confirmation that either driver has secured the seat.",
@@ -144,8 +144,8 @@ const STORIES = [
     "context": "Formula 1's report on 11 October 2026. This article reflects only the statement described there.",
     "whyItMatters": "A source-led rumour ledger should record what is genuinely known without converting an open seat into a fake announcement.",
     "whatNext": "We will update the story when Racing Bulls publishes a decision or a new report provides verifiable, attributable information.",
-    "imageCredit": "Wikimedia Commons · CC BY 4.0",
-    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg"
+    "imageCredit": "Liauzh / Wikimedia Commons · CC BY 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Racing_Bulls_-_Liam_Lawson_-_Qualifying.jpg"
   }
 ]
 export default function handler(req, res) {
