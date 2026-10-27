@@ -1,46 +1,17 @@
-const API = 'https://api.jolpi.ca/f1';
-
-async function get(path) {
-  const r = await fetch(`${API}${path}`, { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(8000) });
-  if (!r.ok) throw new Error(`Jolpica ${r.status}`);
-  return r.json();
-}
-
-export default async function handler(req, res) {
-  try {
-    const year = new Date().getUTCFullYear();
-    const schedules = await get(`/alpha/schedules/${year}/`);
-    const rounds = schedules?.data?.rounds || schedules?.rounds || schedules?.data || [];
-    const normalized = Array.isArray(rounds) ? rounds : [];
-    const now = Date.now();
-    const completed = normalized.filter(r => {
-      const date = r?.race?.date || r?.date || r?.events?.[0]?.date;
-      return date && new Date(date).getTime() <= now;
-    });
-    const latest = completed[completed.length - 1] || normalized[0];
-    const roundId = latest?.round || latest?.round_id || latest?.id;
-    if (!roundId) throw new Error('No current round available');
-
-    const [results, standings] = await Promise.allSettled([
-      get(`/alpha/results/${roundId}/`),
-      get(`/alpha/core/drivers/?season=${year}`)
-    ]);
-
-    const rawResults = results.status === 'fulfilled' ? results.value : null;
-    const resultItems = rawResults?.data?.results || rawResults?.results || rawResults?.data || [];
-    const list = Array.isArray(resultItems) ? resultItems : [];
-
-    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    return res.status(200).json({
-      updatedAt: new Date().toISOString(),
-      season: year,
-      round: roundId,
-      event: latest,
-      results: list.slice(0, 20),
-      source: 'Jolpica F1 API'
-    });
-  } catch (error) {
-    return res.status(502).json({ error: 'Race data unavailable', detail: error.message });
-  }
-}
+const raceResults = [
+  { position: 1, driver: 'Kimi Antonelli', team: 'Mercedes', status: '1:35:16.650', points: 25 },
+  { position: 2, driver: 'Charles Leclerc', team: 'Ferrari', status: '+13.078s', points: 18 },
+  { position: 3, driver: 'Max Verstappen', team: 'Red Bull Racing', status: '+17.485s', points: 15 },
+  { position: 4, driver: 'Lewis Hamilton', team: 'Ferrari', status: '+18.515s', points: 12 },
+  { position: 5, driver: 'Lando Norris', team: 'McLaren', status: '+30.521s', points: 10 },
+  { position: 6, driver: 'Isack Hadjar', team: 'Red Bull Racing', status: '+34.373s', points: 8 },
+  { position: 7, driver: 'Oscar Piastri', team: 'McLaren', status: '+52.674s', points: 6 },
+  { position: 8, driver: 'George Russell', team: 'Mercedes', status: '+54.303s', points: 4 },
+  { position: 9, driver: 'Liam Lawson', team: 'Racing Bulls', status: '+1:19.183', points: 2 },
+  { position: 10, driver: 'Pierre Gasly', team: 'Alpine', status: '+1:27.516', points: 1 },
+  { position: 11, driver: 'Nico HÃ¼lkenberg', team: 'Audi', status: '+1:34.945', points: 0 },
+  { position: 12, driver: 'Arvid Lindblad', team: 'Racing Bulls', status: '1 lap / +6.344s', points: 0 },
+  { position: 13, driver: 'Gabriel Bortoleto', team: 'Audi', status: '1 lap / +14.197s', points: 0 },
+  { position: 14, driver: 'Esteban Ocon', team: 'Haas', status: '1 lap / +21.042s', points: 0 },
+  { position: 15, driver: 'Lance Stroll', team: 'Aston Martin', status: '1 lap / +49.418s', points: 0 },
+  { position: 16, dr¶»§q«^

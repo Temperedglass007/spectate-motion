@@ -2,14 +2,59 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/race-centre", "destination": "/api/page?name=race-centre" },
-    { "source": "/predictions", "destination": "/predictions.html" },
-    { "source": "/calendar", "destination": "/calendar.html" },
-    { "source": "/guide-2026", "destination": "/guide-2026.html" },
-    { "source": "/editorial", "destination": "/editorial.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/admin", "destination": "/admin.html" }
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/predictions",
+      "destination": "/predictions.html"
+    },
+    {
+      "source": "/calendar",
+      "destination": "/calendar.html"
+    },
+    {
+      "source": "/guide-2026",
+      "destination": "/guide-2026.html"
+    },
+    {
+      "source": "/editorial",
+      "destination": "/editorial.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/newsroom-v2",
+      "destination": "/newsroom",
+      "permanent": true
+    },
+    {
+      "source": "/newsroom-v3",
+      "destination": "/newsroom",
+      "permanent": true
+    },
+    {
+      "source": "/race-centre-live",
+      "destination": "/race-centre",
+      "permanent": true
+    },
+    {
+      "source": "/race-centre-source",
+      "destination": "/race-centre",
+      "permanent": true
+    }
   ]
 }
