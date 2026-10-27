@@ -44,14 +44,16 @@ const STORIES = [
     "body": [
       "After the United States Grand Prix, Kimi Antonelli leads the Drivers’ Championship on 365 points. George Russell has 242, Lewis Hamilton 241, Max Verstappen 236 and Charles Leclerc 233.",
       "Formula 1’s points-permutations analysis says only Russell and Hamilton can still beat Antonelli mathematically. The championship is not yet decided; five Grands Prix remain and the clinching scenario depends on subsequent results.",
-      "Mercedes leads the Constructors’ Championship with 607 points. Ferrari is second on 474, while Red Bull and McLaren are tied on 355. Formula 1’s official team table places Red Bull ahead on countback."
+      "Mercedes leads the Constructors’ Championship with 607 points. Ferrari is second on 474, while Red Bull and McLaren are tied on 355. Formula 1’s official team table places Red Bull ahead on countback.",
+      "Formula 1’s official permutations say two points in Mexico would clinch the championship for Antonelli. If he scores no points, he can still clinch if neither Russell nor Hamilton wins."
     ],
     "keyFacts": [
       "Antonelli · 365 points",
       "Russell · 242 points",
       "Hamilton · 241 points",
       "Mercedes · 607 constructors’ points",
-      "Five Grands Prix remaining"
+      "Five Grands Prix remaining",
+      "Two points in Mexico would clinch the title"
     ],
     "context": "Formula 1 official post-Austin standings and points-permutations article, published 26 October 2026.",
     "whyItMatters": "The title fight has narrowed to three drivers mathematically, while Mercedes holds a 133-point constructors’ advantage over Ferrari.",
