@@ -9,8 +9,8 @@ const STORIES = [
     "published": "2026-10-26T21:54:00Z",
     "link": "https://www.formula1.com/en/latest/article/antonelli-surges-to-dominant-victory-in-united-states-grand-prix-ahead-of-leclerc-and-verstappen.6kmBQv9FNTW7LzkDj8S34j",
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Circuit_of_the_Americas%2C_April_22%2C_2018_SkySat.jpg",
-    "imageAlt": "Archival aerial view of Circuit of The Americas, Austin",
-    "imageCredit": "Planet Labs, Inc. · CC BY-SA 4.0 · archival aerial",
+    "imageAlt": "Circuit of The Americas in Austin, Texas; archival aerial image",
+    "imageCredit": "Planet Labs · Wikimedia Commons · CC BY-SA 4.0",
     "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Circuit_of_the_Americas,_April_22,_2018_SkySat.jpg",
     "body": [
       "Kimi Antonelli converted pole position into his ninth Grand Prix victory of the season at Circuit of The Americas, completing 56 laps in 1:35:16.650. Charles Leclerc finished second, 13.078 seconds behind, with Max Verstappen third at 17.485 seconds.",
@@ -37,10 +37,10 @@ const STORIES = [
     "description": "The Mercedes driver has 365 points after his ninth win. George Russell is second on 242 and Lewis Hamilton third on 241 with five Grands Prix remaining.",
     "published": "2026-10-26T22:00:00Z",
     "link": "https://www.formula1.com/en/latest/article/points-permutations-when-is-the-earliest-antonelli-could-win-the-world-championship.24UKT2fsQl4GmC5DMrmYUy",
-    "image": "",
-    "imageAlt": "",
-    "imageCredit": "",
-    "imageCreditUrl": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/2026_Bahrain_GP_-_Mercedes_-_Kimi_Antonelli_-_Race.jpg/1920px-2026_Bahrain_GP_-_Mercedes_-_Kimi_Antonelli_-_Race.jpg",
+    "imageAlt": "Kimi Antonelli driving Mercedes during the 2026 Bahrain Grand Prix; season archive",
+    "imageCredit": "Wikimedia Commons · CC BY-SA 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2026_Bahrain_GP_-_Mercedes_-_Kimi_Antonelli_-_Race.jpg",
     "body": [
       "After the United States Grand Prix, Kimi Antonelli leads the Drivers’ Championship on 365 points. George Russell has 242, Lewis Hamilton 241, Max Verstappen 236 and Charles Leclerc 233.",
       "Formula 1’s points-permutations analysis says only Russell and Hamilton can still beat Antonelli mathematically. The championship is not yet decided; five Grands Prix remain and the clinching scenario depends on subsequent results.",
@@ -68,10 +68,10 @@ const STORIES = [
     "description": "Round 19 runs 30 October–1 November. Practice starts at 00:00 IST on Saturday; the Grand Prix begins at 01:30 IST on Monday, 2 November.",
     "published": "2026-10-27T10:00:00Z",
     "link": "https://www.formula1.com/en/latest/article/formula-1-gran-premio-de-la-ciudad-de-mexico-2026.14b3wTWzNNLJ5Wd8cG7HCQ",
-    "image": "",
-    "imageAlt": "",
-    "imageCredit": "",
-    "imageCreditUrl": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez%2C_June_4%2C_2018_SkySat.jpg/1920px-Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez%2C_June_4%2C_2018_SkySat.jpg",
+    "imageAlt": "Aerial view of Autódromo Hermanos Rodríguez in Mexico City; archival circuit image",
+    "imageCredit": "Planet Labs · Wikimedia Commons · CC BY-SA 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez,_June_4,_2018_SkySat.jpg",
     "body": [
       "The Mexico City Grand Prix is Round 19 of the 2026 season, scheduled for 30 October–1 November at the Autódromo Hermanos Rodríguez. Formula 1’s official timetable lists local session times in Mexico City, which is six hours behind UTC; India Standard Time is UTC+5:30.",
       "Practice 1 runs Friday 30 October, 12:30–13:30 local: Saturday 31 October, 00:00–01:00 IST. Practice 2 is Friday 16:00–17:00 local: Saturday 03:30–04:30 IST.",
@@ -98,9 +98,9 @@ const STORIES = [
     "description": "Max Verstappen led the Singapore Grand Prix from pole for his first victory at the circuit. Charles Leclerc finished second and Antonelli completed the podium.",
     "published": "2026-10-11T14:00:00Z",
     "link": "https://www.formula1.com/en/latest/article/verstappen-seals-commanding-singapore-grand-prix-victory-from-leclerc-and-antonelli.49wDzysiVqi5cloGjle40A",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Singapore%20GP%20-%20Red%20Bull%20-%20Max%20Verstappen%20-%20FP1.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/2025_Singapore_GP_-_Red_Bull_-_Max_Verstappen_-_FP1.jpg/1920px-2025_Singapore_GP_-_Red_Bull_-_Max_Verstappen_-_FP1.jpg",
     "imageAlt": "Max Verstappen driving at the 2025 Singapore Grand Prix; archival image",
-    "imageCredit": "Liauzh · CC BY-SA 4.0 · 2025 archive image",
+    "imageCredit": "Liauzh · Wikimedia Commons · CC BY-SA 4.0",
     "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2025_Singapore_GP_-_Red_Bull_-_Max_Verstappen_-_FP1.jpg",
     "body": [
       "Max Verstappen converted pole position into victory at the Singapore Grand Prix, leading all 62 laps for his first win at Marina Bay and the 73rd Grand Prix victory of his career, according to Formula 1's race report.",
@@ -128,8 +128,8 @@ const STORIES = [
     "description": "Team principal Alan Permane says the team expects to choose its 2027 line-up in the coming weeks. That confirms an open decision, not a signed deal.",
     "published": "2026-10-11T06:08:00Z",
     "link": "https://www.formula1.com/en/latest/article/permane-states-racing-bulls-will-select-their-2027-driver-line-up-in-the-coming-weeks.39Cso2HINAEU5KViOulOZb",
-    "image": "",
-    "imageAlt": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg/1920px-2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg",
+    "imageAlt": "Archival Formula 1 action from the 2026 Chinese Grand Prix; illustrative season image",
     "body": [
       "Racing Bulls team principal Alan Permane has said the team expects to make its 2027 driver-line-up decision in the coming weeks, according to Formula 1's report published on 11 October.",
       "Liam Lawson and Arvid Lindblad are the names in focus in that report. It does not announce a final selection, and it should not be read as confirmation that either driver has secured the seat.",
@@ -143,7 +143,9 @@ const STORIES = [
     ],
     "context": "Formula 1's report on 11 October 2026. This article reflects only the statement described there.",
     "whyItMatters": "A source-led rumour ledger should record what is genuinely known without converting an open seat into a fake announcement.",
-    "whatNext": "We will update the story when Racing Bulls publishes a decision or a new report provides verifiable, attributable information."
+    "whatNext": "We will update the story when Racing Bulls publishes a decision or a new report provides verifiable, attributable information.",
+    "imageCredit": "Wikimedia Commons · CC BY 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Ferrari_-_Charles_Leclerc_-_FP1.jpg"
   }
 ]
 export default function handler(req, res) {
