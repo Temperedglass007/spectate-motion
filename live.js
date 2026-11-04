@@ -31,7 +31,7 @@
       try {
         const r = await fetch('/api/race', {cache:'no-store'}); if (!r.ok) throw new Error('race');
         const data = await r.json(); const rows = Array.isArray(data.results) ? data.results.slice(0,10) : [];
-        box.querySelector('.live-results').innerHTML = rows.map((x,i) => { const driver = x.driver || x.Driver || {}; const team = x.team || x.Constructor || {}; const name = driver.fullName || [driver.givenName,driver.familyName].filter(Boolean).join(' ') || x.name || 'Driver'; const points = x.points ?? x.points_scored ?? '—'; return `<div class="live-result"><span>${esc(x.position ?? i+1)}</span><strong>${esc(name)}</strong><span>${esc(points)} pts</span></div>`; }).join('') || '<div class="live-error">No classification returned for the latest event yet.</div>';
+        box.querySelector('.live-results').innerHTML = rows.map((x,i) => { const driver = x.driver || x.Driver || {}; const team = x.team || x.Constructor || {}; const name = typeof driver === 'string' ? driver : (driver.fullName || [driver.givenName,driver.familyName].filter(Boolean).join(' ') || x.name || 'Driver'); const points = x.points ?? x.points_scored ?? '—'; return `<div class="live-result"><span>${esc(x.position ?? i+1)}</span><strong>${esc(name)}</strong><span>${esc(points)} pts</span></div>`; }).join('') || '<div class="live-error">No classification returned for the latest event yet.</div>';
       } catch { box.querySelector('.live-results').innerHTML = '<div class="live-error">Race data is temporarily unavailable. The editorial snapshot remains below.</div>'; }
     };
     load(); setInterval(load, 60000);
